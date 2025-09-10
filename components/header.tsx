@@ -4,7 +4,10 @@ import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import logo from "@/public/images/Global_Trade_Panda_logo.png"
+
+/** Editá solo estos dos números para cambiar el tamaño del logo */
+const LOGO_SIZE_MOBILE = 56;  // px
+const LOGO_SIZE_DESKTOP = 96; // px
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,18 +24,37 @@ export function Header() {
       className="group fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center gap-3">
+        <div className="flex items-center gap-3 py-2 md:py-3">
           {/* Logo + Nombre */}
           <div className="flex items-center gap-3 flex-shrink-0">
-            <Image
-              src={logo}
-              alt="Logo Global Trade Panda"
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain"
-              priority
-            />
-            <h1 className="text-xl font-bold text-white drop-shadow-md">
+            {/* Mobile */}
+            <div
+              className="relative md:hidden"
+              style={{ width: LOGO_SIZE_MOBILE, height: LOGO_SIZE_MOBILE }}
+            >
+              <Image
+                src="/images/Global_Trade_Panda_logo.png"
+                alt="Logo Global Trade Panda"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            {/* Desktop */}
+            <div
+              className="relative hidden md:block"
+              style={{ width: LOGO_SIZE_DESKTOP, height: LOGO_SIZE_DESKTOP }}
+            >
+              <Image
+                src="/images/Global_Trade_Panda_logo.png"
+                alt="Logo Global Trade Panda"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            <h1 className="text-xl md:text-2xl font-bold text-white drop-shadow-md">
               Global Trade Panda
             </h1>
           </div>
@@ -59,11 +81,7 @@ export function Header() {
               aria-controls="nav-mobile"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? (
-                <X className="h-6 w-6 text-white" />
-              ) : (
-                <Menu className="h-6 w-6 text-white" />
-              )}
+              {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
             </Button>
           </div>
         </div>
@@ -72,7 +90,14 @@ export function Header() {
       {/* NAV DESKTOP (sin CTA aquí) */}
       <nav
         aria-label="Navegación principal"
-        className="pointer-events-none absolute left-0 right-0 top-16 hidden max-h-0 overflow-hidden transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:max-h-28 md:block"
+        className="
+          pointer-events-none absolute left-0 right-0
+          top-16 md:top-[104px]
+          hidden max-h-0 overflow-hidden
+          transition-all duration-300 ease-out
+          group-hover:pointer-events-auto group-hover:max-h-28
+          md:block
+        "
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-start gap-6 py-3">
@@ -95,7 +120,6 @@ export function Header() {
             <button onClick={() => scrollToSection("servicios")} className="block w-full px-3 py-2 text-left text-white hover:text-accent transition-colors">Servicios</button>
             <button onClick={() => scrollToSection("preguntas")} className="block w-full px-3 py-2 text-left text-white hover:text-accent transition-colors">FAQ</button>
             <button onClick={() => scrollToSection("testimonios")} className="block w-full px-3 py-2 text-left text-white hover:text-accent transition-colors">Testimonios</button>
-            {/* CTA mobile */}
             <Button
               onClick={() => scrollToSection("contacto")}
               className="mt-2 w-full bg-accent hover:bg-accent/90 text-accent-foreground"
