@@ -1,0 +1,218 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* TipografÃ­as base: Inter + IBM Plex Mono */
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Paleta base */
+  --background: oklch(1 0 0);        /* blanco */
+  --foreground: oklch(0 0 0);        /* negro */
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0 0 0);
+  --primary: oklch(0 0 0);
+  --primary-foreground: oklch(1 0 0);
+
+  /* ðŸŽ¯ CTA naranja unificado */
+  /* Hex exacto: #FF6A00 (vibrante y legible) */
+  --accent: #ff6a00;
+  --accent-foreground: #ffffff;
+
+  /* Alineamos secondary al mismo tono para evitar desajustes */
+  --secondary: var(--accent);
+  --secondary-foreground: var(--accent-foreground);
+
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.98 0 0);
+
+  /* Ring con el mismo naranja (50% opacidad) */
+  --ring: color-mix(in oklch, var(--accent) 50%, transparent);
+
+  /* Charts */
+  --chart-1: oklch(0 0 0);
+  --chart-2: var(--accent);
+  --chart-3: oklch(0.55 0.22 25);
+  --chart-4: oklch(0.4 0 0);
+  --chart-5: oklch(0.8 0 0);
+
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0 0 0);
+  --sidebar-primary: oklch(0.98 0 0);
+  --sidebar-primary-foreground: oklch(0 0 0);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: color-mix(in oklch, var(--accent) 50%, transparent);
+}
+
+.dark {
+  --background: oklch(0.05 0 0);
+  --foreground: oklch(1 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(1 0 0);
+  --popover: oklch(0.05 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(1 0 0);
+  --primary-foreground: oklch(0 0 0);
+
+  /* Conservamos el mismo naranja en dark */
+  --accent: #ff6a00;
+  --accent-foreground: #ffffff;
+  --secondary: var(--accent);
+  --secondary-foreground: var(--accent-foreground);
+
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.1 0 0);
+
+  --ring: color-mix(in oklch, var(--accent) 50%, transparent);
+
+  --chart-1: oklch(1 0 0);
+  --chart-2: var(--accent);
+  --chart-3: oklch(0.6 0.22 25);
+  --chart-4: oklch(0.7 0 0);
+  --chart-5: oklch(0.4 0 0);
+
+  --sidebar: oklch(0 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: oklch(0 0 0);
+  --sidebar-accent: oklch(0.15 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: color-mix(in oklch, var(--accent) 50%, transparent);
+}
+
+/* Mapear Tailwind -> variables */
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* Mapeos tailwind -> variables */
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* ====== TipografÃ­a global & jerarquÃ­a ====== */
+@layer base {
+  /* TamaÃ±o base algo menor para look mÃ¡s fino */
+  html { font-size: 15px; }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" on, "calt" on;
+    letter-spacing: 0;
+  }
+
+  /* JerarquÃ­a con escalas fluidas */
+  h1 {
+    font-weight: 800;                 /* extrabold controlado */
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    font-size: clamp(2.2rem, 4vw + 1rem, 3.6rem);
+  }
+  h2 {
+    font-weight: 600;                 /* semibold */
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    font-size: clamp(1.6rem, 2.2vw + 0.6rem, 2.4rem);
+  }
+  h3 {
+    font-weight: 600;
+    line-height: 1.3;
+    font-size: clamp(1.25rem, 1.4vw + 0.5rem, 1.6rem);
+  }
+  h4 {
+    font-weight: 600;
+    line-height: 1.35;
+    font-size: clamp(1.1rem, 1vw + 0.4rem, 1.3rem);
+  }
+  p, li {
+    font-weight: 400;
+    line-height: 1.65;
+    font-size: 1rem;                  /* 15px por el html base */
+  }
+  small, .text-small { font-size: 0.875rem; }
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;             /* ~14px */
+    line-height: 1.5;
+  }
+
+  /* Textos sobre fondos oscuros (hero/header) */
+  .on-dark { color: #ffffff; }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+}
+
+
+/* Ajuste para anclas: evita que la navbar sticky tape el tÃ­tulo */
+[id] { scroll-margin-top: 90px; }
