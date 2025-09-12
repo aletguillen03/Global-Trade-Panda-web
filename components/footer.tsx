@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Global Trade Panda</h3>
+            <h3 className="text-2xl font-bold mb-4">Panda Global Trade</h3>
             <p className="text-primary-foreground/80 mb-4 text-pretty">
               Tu socio confiable para importaciones desde China. Conectamos tu empresa con los mejores proveedores
               asiáticos, garantizando calidad, seguridad y resultados exitosos en cada proceso.
@@ -57,7 +57,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 Global Trade Panda. Todos los derechos reservados. | Especialistas en importaciones desde China para
+            © 2024 Panda Global Trade. Todos los derechos reservados. | Especialistas en importaciones desde China para
             empresas latinoamericanas.
           </p>
         </div>
