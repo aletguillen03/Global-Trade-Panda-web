@@ -44,12 +44,18 @@ export function Process() {
     },
     {
       id: 7,
+      title: "Confirmación Final de la Operación",
+      description: "Realizamos la confirmación definitiva de todos los detalles de la operación, incluyendo especificaciones finales, cantidades y términos comerciales antes de proceder con la producción.",
+      icon: CheckCircle,
+    },
+    {
+      id: 8,
       title: "Gestión, Coordinación y Envío de Mercadería",
       description: "Coordinamos toda la logística de producción, empaque y envío desde China hasta tu destino final.",
       icon: CheckCircle,
     },
     {
-      id: 8,
+      id: 9,
       title: "Liberación de la Mercadería y Entrega Final",
       description: "Gestionamos los trámites aduaneros y coordinamos la entrega final en tu almacén o punto de destino.",
       icon: CheckCircle,
@@ -58,12 +64,12 @@ export function Process() {
 
   const paymentMilestones = [
     {
-      step: 6,
+      step: 7,
       title: "Pago del 50% de la Operación",
-      description: "Primer pago después de aprobar la calidad de las muestras",
+      description: "Primer pago después de la confirmación final de la operación",
     },
     {
-      step: 7,
+      step: 8,
       title: "Pago del 50% Restante",
       description: "Pago final después de la gestión y coordinación del envío",
     },
