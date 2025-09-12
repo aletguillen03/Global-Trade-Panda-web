@@ -1,30 +1,114 @@
-# Import company website
+# Panda Global Trade - Sitio Web Corporativo
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+> **Sitio web para sempresa de servicios de importacion Panda Global Trade **
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/santifenochio-gmailcoms-projects/v0-import-company-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/Uttq9577Fnp)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.9-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![React](https://img.shields.io/badge/React-18.0-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 
-## Overview
+## Sobre la empresa:
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+Panda Global Trade es una empresa especializada en servicios de importación desde China para empresas. Este sitio web corporativo presenta de manera profesional y moderna los servicios ofrecidos, incluyendo un proceso de importación interactivo y transparente.
 
-## Deployment
+### Características Principales
 
-Your project is live at:
+- **Diseño Responsive**: Optimizado para desktop, tablet y móvil
+- **Proceso Interactivo**: Timeline visual del proceso de importación con desvíos clickeables
+- **Navegación Intuitiva**: Navbar transparente con scroll suave entre secciones
+- **Formulario de Contacto**: Sistema de contacto integrado
+- **SEO Optimizado**: Meta tags y estructura semántica
+- **Accesibilidad**: Cumple estándares de accesibilidad web
 
-**[https://vercel.com/santifenochio-gmailcoms-projects/v0-import-company-website](https://vercel.com/santifenochio-gmailcoms-projects/v0-import-company-website)**
+## Info:
 
-## Build your app
+### Frontend
+- **Next.js 14.2.16** - Framework React con App Router
+- **TypeScript 5.0** - Tipado estático
+- **Tailwind CSS 4.1.9** - Framework de CSS utilitario
+- **React 18** - Biblioteca de interfaz de usuario
 
-Continue building your app on:
+### Componentes UI
+- **Radix UI** - Componentes accesibles y sin estilos
+- **Lucide React** - Iconografía moderna
+- **Class Variance Authority** - Gestión de variantes de componentes
 
-**[https://v0.app/chat/projects/Uttq9577Fnp](https://v0.app/chat/projects/Uttq9577Fnp)**
+### Herramientas de Desarrollo
+- **ESLint** - Linter para JavaScript/TypeScript
+- **PostCSS** - Procesador de CSS
+- **Autoprefixer** - Prefijos CSS automáticos
 
-## How It Works
+## Estructura
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```
+├── app/                    # App Router de Next.js
+│   ├── globals.css        # Estilos globales y variables CSS
+│   ├── layout.tsx         # Layout principal con metadata
+│   └── page.tsx           # Página principal
+├── components/            # Componentes React
+│   ├── ui/               # Componentes base (Button, Card, etc.)
+│   ├── about.tsx         # Sección "Quiénes Somos"
+│   ├── contact.tsx       # Formulario de contacto
+│   ├── faq.tsx           # Preguntas frecuentes
+│   ├── footer.tsx        # Pie de página
+│   ├── header.tsx        # Navegación principal
+│   ├── hero.tsx          # Sección hero con CTA
+│   ├── process.tsx       # Proceso de importación interactivo
+│   ├── services.tsx      # Servicios ofrecidos
+│   └── testimonials.tsx  # Testimonios de clientes
+├── lib/                  # Utilidades
+│   └── utils.ts          # Funciones helper
+├── public/               # Archivos estáticos
+│   └── images/           # Imágenes del sitio
+└── styles/               # Archivos de estilos adicionales
+```
+
+## Secciones
+
+### 1. **Hero Section**
+- Imagen de fondo con overlay
+- Título principal y subtítulo
+- Botones de llamada a la acción
+- Indicadores de confianza
+
+### 2. **Quiénes Somos**
+- Información sobre la empresa
+- Valores y experiencia
+
+### 3. **Servicios**
+- Grid de servicios con iconos
+- Descripción detallada de cada servicio
+
+### 4. **Nuestro Proceso de Importación** ⭐
+- Timeline vertical interactivo
+- 8 pasos del proceso
+- Desvíos clickeables ("Precio elevado", "Calidad no esperada")
+- Hitos de pago destacados
+- CTA final
+
+### 5. **Contacto**
+- Formulario de contacto
+- Información de contacto
+- Mapa de ubicación
+
+### 6. **FAQ**
+- Preguntas frecuentes con acordeón
+- Respuestas detalladas
+
+### 7. **Testimonios**
+- Testimonios de clientes
+- Casos de éxito
+
+## Instalación y Configuración
+
+### Prerrequisitos
+- Node.js 18.0 o superior
+- npm, yarn o pnpm
+
+
+---
+
+<div align="center">
+  <p>Hecho con ❤️ por el equipo de Panda Global Trade</p>
+  <p>© 2024 Panda Global Trade. Todos los derechos reservados.</p>
+</div>
