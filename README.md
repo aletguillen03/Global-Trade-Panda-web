@@ -1,17 +1,31 @@
+<<<<<<< HEAD
 # 🐼 Panda Global Trade - Sitio Web Corporativo
 
 > **Sitio web profesional para servicios de importación desde China para empresas**
+=======
+# Panda Global Trade - Sitio Web Corporativo
+
+> **Sitio web para sempresa de servicios de importacion Panda Global Trade **
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.9-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![React](https://img.shields.io/badge/React-18.0-61DAFB?style=flat-square&logo=react)](https://reactjs.org/)
 
+<<<<<<< HEAD
 ## 📋 Descripción
 
 Panda Global Trade es una empresa especializada en servicios de importación desde China para empresas. Este sitio web corporativo presenta de manera profesional y moderna los servicios ofrecidos, incluyendo un proceso de importación interactivo y transparente.
 
 ### 🎯 Características Principales
+=======
+## Sobre la empresa:
+
+Panda Global Trade es una empresa especializada en servicios de importación desde China para empresas. Este sitio web corporativo presenta de manera profesional y moderna los servicios ofrecidos, incluyendo un proceso de importación interactivo y transparente.
+
+### Características Principales
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 - **Diseño Responsive**: Optimizado para desktop, tablet y móvil
 - **Proceso Interactivo**: Timeline visual del proceso de importación con desvíos clickeables
@@ -20,7 +34,11 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 - **SEO Optimizado**: Meta tags y estructura semántica
 - **Accesibilidad**: Cumple estándares de accesibilidad web
 
+<<<<<<< HEAD
 ## 🚀 Tecnologías Utilizadas
+=======
+## Info:
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 ### Frontend
 - **Next.js 14.2.16** - Framework React con App Router
@@ -38,7 +56,11 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 - **PostCSS** - Procesador de CSS
 - **Autoprefixer** - Prefijos CSS automáticos
 
+<<<<<<< HEAD
 ## 📁 Estructura del Proyecto
+=======
+## Estructura
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 ```
 ├── app/                    # App Router de Next.js
@@ -63,7 +85,11 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 └── styles/               # Archivos de estilos adicionales
 ```
 
+<<<<<<< HEAD
 ## 🎨 Secciones del Sitio
+=======
+## Secciones
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 ### 1. **Hero Section**
 - Imagen de fondo con overlay
@@ -99,11 +125,16 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 - Testimonios de clientes
 - Casos de éxito
 
+<<<<<<< HEAD
 ## 🛠️ Instalación y Configuración
+=======
+## Instalación y Configuración
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
 
 ### Prerrequisitos
 - Node.js 18.0 o superior
 - npm, yarn o pnpm
+<<<<<<< HEAD
 
 ### Pasos de Instalación
 
@@ -223,3 +254,5 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
   <p>Hecho con ❤️ por el equipo de Panda Global Trade</p>
   <p>© 2024 Panda Global Trade. Todos los derechos reservados.</p>
 </div>
+=======
+>>>>>>> 571f68f03eb4db1ad101d8915212dce5c8c00e6c
