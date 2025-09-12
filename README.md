@@ -104,11 +104,3 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 ### Prerrequisitos
 - Node.js 18.0 o superior
 - npm, yarn o pnpm
-
-
----
-
-<div align="center">
-  <p>Hecho con ❤️ por el equipo de Panda Global Trade</p>
-  <p>© 2024 Panda Global Trade. Todos los derechos reservados.</p>
-</div>
