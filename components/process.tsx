@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, ArrowDown, DollarSign, AlertTriangle, RotateCcw } from "lucide-react"
+import { CheckCircle, DollarSign, AlertTriangle, RotateCcw } from "lucide-react"
 
 export function Process() {
   const processSteps = [
@@ -165,12 +165,6 @@ export function Process() {
                     })}
                   </div>
 
-                  {/* Flecha hacia abajo (excepto en el último paso) */}
-                  {index < processSteps.length - 1 && (
-                    <div className="absolute left-7 top-16 text-accent/40 hidden md:block">
-                      <ArrowDown className="h-6 w-6" />
-                    </div>
-                  )}
                 </div>
               ))}
             </div>

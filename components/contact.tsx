@@ -1,222 +1,138 @@
-"use client"
+'use client';
 
-import type React from "react"
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { buildGoogleFormUrl, GOOGLE_FORM_PREFILL_MAP } from '@/lib/googleForm';
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+type PresetName = 'tiny' | 'compact' | 'cozy';
+
+function heightsFor(preset: PresetName, vw: number) {
+  const map: Record<PresetName, number[]> = {
+    tiny:    [1050, 980, 920, 820, 760],   // <380, <480, <768, <1024, >=1024
+    compact: [1150, 1080, 1020, 940, 880],
+    cozy:    [1250, 1180, 1100, 1000, 960],
+  };
+  const [m380, m480, m768, m1024, desktop] = map[preset];
+  if (vw < 380) return m380;
+  if (vw < 480) return m480;
+  if (vw < 768) return m768;
+  if (vw < 1024) return m1024;
+  return desktop;
+}
+
+function getForcedHeightFromQuery() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const h = q.get('formH');
+    if (!h) return undefined;
+    const n = Number(h);
+    return Number.isFinite(n) && n > 400 ? n : undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    nombre: "",
-    empresa: "",
-    email: "",
-    telefono: "",
-    consulta: "",
-  })
+  const PRESET: PresetName = 'compact'; // cambiá a 'tiny' si querés aún más chico
+  const base =
+    process.env.NEXT_PUBLIC_GOOGLE_FORM_EMBED_SRC ??
+    'https://docs.google.com/forms/d/e/1FAIpQLSdGtMiTkrdzTIrsgY5x_-bLtLtSkPXtYhsQp0DXpsJzLWXluQ/viewform?embedded=true';
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData)
-    alert("¡Gracias por tu consulta! Te contactaremos pronto.")
-    setFormData({
-      nombre: "",
-      empresa: "",
-      email: "",
-      telefono: "",
-      consulta: "",
-    })
-  }
+  const [src, setSrc] = useState<string>('');
+  const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [height, setHeight] = useState<number>(900);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  // URL con prefill + UTMs
+  useEffect(() => {
+    setSrc(buildGoogleFormUrl(base, GOOGLE_FORM_PREFILL_MAP));
+  }, [base]);
+
+  // Altura fija con scroll interno (y override ?formH=)
+  useEffect(() => {
+    const update = () => {
+      const forced = getForcedHeightFromQuery();
+      if (forced) return setHeight(forced);
+      const vw = typeof window !== 'undefined' ? window.innerWidth : 1200;
+      setHeight(heightsFor(PRESET, vw));
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, [PRESET]);
+
+  const fallbackHref = useMemo(() => {
+    try {
+      const url = new URL(base);
+      url.searchParams.delete('embedded');
+      return url.toString();
+    } catch {
+      return base;
+    }
+  }, [base]);
 
   return (
-    <section id="contacto" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Solicita Tu Cotización</h2>
-            <p className="text-xl text-secondary text-pretty">
-              Cuéntanos sobre tu proyecto de importación y te proporcionaremos una cotización detallada sin compromiso.
-              Nuestro equipo está listo para ayudarte.
+    <section id="contacto" className="w-full px-4 py-16 md:px-8 lg:px-12">
+      {/* Limitar el ancho para que “se vea pequeño” */}
+      <div className="mx-auto w-full max-w-xl">
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-center">
+          Contacto
+        </h2>
+        <p className="mt-2 text-zinc-600 text-sm text-center">
+          Contanos qué necesitás importar y te respondemos con una cotización y los próximos pasos.
+        </p>
+
+        {/* Loader */}
+        {!loaded && !failed && (
+          <div
+            aria-live="polite"
+            aria-busy="true"
+            className="mt-6 h-32 w-full animate-pulse rounded-md border border-zinc-200"
+          />
+        )}
+
+        {/* Iframe con scroll interno */}
+        {!failed && (
+          <div className="mt-6">
+            <iframe
+              ref={iframeRef}
+              title="Formulario de contacto"
+              src={src || undefined}
+              className="w-full rounded-md border border-zinc-200 bg-white"
+              style={{ height: height * 0.75 }}   // ↓ 25% más bajo
+              loading="eager"
+              referrerPolicy="no-referrer-when-downgrade"
+              scrolling="yes"
+              onLoad={() => setLoaded(true)}
+              onError={() => {
+                setFailed(true);
+                setLoaded(true);
+              }}
+            />
+          </div>
+        )}
+
+        {/* Fallback */}
+        {failed && (
+          <div className="mt-6 rounded-md border border-amber-300 bg-amber-50 p-4">
+            <p className="text-amber-900">
+              No pudimos cargar el formulario embebido. Abrilo en una pestaña nueva:
             </p>
+            <a
+              className="mt-2 inline-block rounded-md border px-3 py-2 text-sm font-medium hover:bg-zinc-50"
+              href={fallbackHref}
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir formulario
+            </a>
           </div>
+        )}
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">Formulario de Contacto</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="nombre" className="block text-sm font-medium text-primary mb-2">
-                        Nombre Completo *
-                      </label>
-                      <Input
-                        id="nombre"
-                        name="nombre"
-                        type="text"
-                        required
-                        value={formData.nombre}
-                        onChange={handleChange}
-                        placeholder="Tu nombre completo"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="empresa" className="block text-sm font-medium text-primary mb-2">
-                        Empresa *
-                      </label>
-                      <Input
-                        id="empresa"
-                        name="empresa"
-                        type="text"
-                        required
-                        value={formData.empresa}
-                        onChange={handleChange}
-                        placeholder="Nombre de tu empresa"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-primary mb-2">
-                        Email *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="tu@empresa.com"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="telefono" className="block text-sm font-medium text-primary mb-2">
-                        Teléfono
-                      </label>
-                      <Input
-                        id="telefono"
-                        name="telefono"
-                        type="tel"
-                        value={formData.telefono}
-                        onChange={handleChange}
-                        placeholder="+1 234 567 8900"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="consulta" className="block text-sm font-medium text-primary mb-2">
-                      Consulta *
-                    </label>
-                    <Textarea
-                      id="consulta"
-                      name="consulta"
-                      required
-                      value={formData.consulta}
-                      onChange={handleChange}
-                      placeholder="Describe tu proyecto de importación: productos que necesitas, cantidades aproximadas, plazos, etc."
-                      rows={5}
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
-                  >
-                    Enviar Consulta
-                    <Send className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Información de Contacto</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary">Email</h4>
-                      <p className="text-secondary">contacto@globaltradepanda.com</p>
-                      <p className="text-secondary">ventas@globaltradepanda.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary">Teléfono</h4>
-                      <p className="text-secondary">+1 (555) 123-4567</p>
-                      <p className="text-secondary">WhatsApp: +1 (555) 987-6543</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-5 w-5 text-accent" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-primary">Oficina</h4>
-                      <p className="text-secondary">
-                        Av. Empresarial 123, Piso 15
-                        <br />
-                        Ciudad de México, México
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h4 className="font-semibold text-primary mb-4">Horarios de Atención</h4>
-                  <div className="space-y-2 text-secondary">
-                    <p>
-                      <span className="font-medium">Lunes - Viernes:</span> 9:00 AM - 6:00 PM
-                    </p>
-                    <p>
-                      <span className="font-medium">Sábados:</span> 9:00 AM - 2:00 PM
-                    </p>
-                    <p>
-                      <span className="font-medium">Domingos:</span> Cerrado
-                    </p>
-                  </div>
-                  <div className="mt-4 p-4 bg-accent/10 rounded-lg">
-                    <p className="text-sm text-primary">
-                      <strong>Respuesta garantizada en menos de 24 horas</strong>
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
+        <p className="mt-6 text-xs text-zinc-500">
+          Usamos tus datos sólo para responder tu consulta. No compartimos tu información con terceros.
+        </p>
       </div>
     </section>
-  )
+  );
 }
