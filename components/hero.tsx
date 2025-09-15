@@ -12,7 +12,7 @@ export function Hero() {
   }
 
   return (
-    <section id="inicio" className="relative py-20 lg:py-32 min-h-[80vh] flex items-center bg-black">
+    <section id="inicio" className="relative py-15 lg:py-24 min-h-[60vh] flex items-center bg-black">
       {/* Background image with overlay (se respeta tu ruta) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

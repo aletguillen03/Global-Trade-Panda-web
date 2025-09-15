@@ -69,41 +69,6 @@ export function Services() {
             ))}
           </div>
 
-          <div className="mt-16 bg-card p-8 rounded-lg border border-border">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-primary mb-4">Proceso Completo de Importación</h3>
-              <p className="text-lg text-secondary mb-8 text-pretty">
-                Desde el primer contacto hasta la entrega final, nos encargamos de todo para que tú puedas enfocarte en
-                hacer crecer tu negocio. Nuestro proceso probado garantiza resultados exitosos.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-                <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold mb-2">
-                    1
-                  </div>
-                  <p className="text-sm font-medium text-primary">Consulta Inicial</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold mb-2">
-                    2
-                  </div>
-                  <p className="text-sm font-medium text-primary">Búsqueda & Cotización</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold mb-2">
-                    3
-                  </div>
-                  <p className="text-sm font-medium text-primary">Gestión & Envío</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold mb-2">
-                    4
-                  </div>
-                  <p className="text-sm font-medium text-primary">Entrega Final</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

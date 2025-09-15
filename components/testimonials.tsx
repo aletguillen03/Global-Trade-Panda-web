@@ -4,24 +4,24 @@ import { Star, Quote } from "lucide-react"
 export function Testimonials() {
   const testimonials = [
     {
-      name: "Carlos Mendoza",
-      company: "Distribuidora Industrial del Norte",
+      name: "Augusto Krause",
+      company: "Logistica",
       content:
-        "ImportChina Pro transformó nuestra cadena de suministro. En 18 meses hemos realizado 12 importaciones exitosas, reduciendo costos en un 35% y mejorando la calidad de nuestros productos. Su equipo es profesional y siempre está disponible.",
+        "",
       rating: 5,
     },
     {
-      name: "María Elena Rodríguez",
-      company: "Textiles y Confecciones MER",
+      name: "Faustino Hohl",
+      company: "SAGVB",
       content:
-        "Después de una mala experiencia con otro proveedor, ImportChina Pro nos devolvió la confianza. Su proceso de control de calidad es excepcional y la comunicación constante nos da total tranquilidad. Altamente recomendados.",
+        "",
       rating: 5,
     },
     {
-      name: "Roberto Silva",
-      company: "Equipos Médicos Profesionales",
+      name: "Alejo Guillen",
+      company: "Boca Juniors",
       content:
-        "La gestión de documentación y trámites aduaneros es impecable. Como empresa del sector médico, necesitamos cumplir normativas estrictas y ellos se encargan de todo. Llevamos 3 años trabajando juntos sin problemas.",
+        "",
       rating: 5,
     },
   ]
