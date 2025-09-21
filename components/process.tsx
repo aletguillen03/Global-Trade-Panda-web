@@ -116,12 +116,12 @@ export function Process() {
               {processSteps.map((step, index) => (
                 <div key={step.id} className="relative" data-step={step.id}>
                   {/* Número del paso */}
-                  <div className="absolute left-0 top-0 w-16 h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg z-10">
+                  <div className="absolute left-0 top-0 w-10 h-10 md:w-16 md:h-16 bg-accent text-accent-foreground rounded-full flex items-center justify-center font-bold text-sm md:text-lg shadow-lg z-10">
                     {step.id}
                   </div>
 
                   {/* Contenido del paso */}
-                  <div className="ml-20 md:ml-24">
+                  <div className="ml-14 md:ml-24">
                     <Card className="hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">

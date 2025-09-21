@@ -1,4 +1,4 @@
-﻿import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Building2, Factory, Layers, ShoppingCart, Users } from "lucide-react"
 
 const clientSegments = [
@@ -34,7 +34,7 @@ const clientSegments = [
   },
 ]
 
-export function Testimonials() {
+export function Clients() {
   return (
     <section id="clientes-habituales" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

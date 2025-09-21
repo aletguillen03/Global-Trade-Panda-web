@@ -11,16 +11,16 @@ export const metadata: Metadata = {
   },
   description:
     "Agente integral de compras e importación desde China para empresas. Búsqueda de proveedores, negociación, control de calidad y logística puerta a puerta.",
-  metadataBase: new URL("https://tudominio.com"),
-  alternates: { canonical: "https://tudominio.com" },
+  metadataBase: new URL("https://pandaglobaltrade.com.ar"),
+  alternates: { canonical: "https://pandaglobaltrade.com.ar" },
   openGraph: {
     type: "website",
-    url: "https://tudominio.com",
+    url: "https://pandaglobaltrade.com.ar",
     title: "Panda Global Trade",
     description: "Gestión completa con foco en calidad, seguridad y cumplimiento.",
     images: ["/og.jpg"],
   },
-  twitter: { card: "summary_large_image", site: "@tuusuario" },
+  twitter: { card: "summary_large_image"},
   icons: { icon: [{ url: "/images/48x48-favicon.png", sizes: "48x48", type: "image/png" }], shortcut: "/images/48x48-favicon.png" },
   generator: "v0.app",
 }
@@ -49,7 +49,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
 
         <Suspense>
-          <Analytics />
         </Suspense>
       </body>
     </html>

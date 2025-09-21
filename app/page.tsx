@@ -4,7 +4,7 @@ import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { FAQ } from "@/components/faq"
-import { Testimonials } from "@/components/clients"
+import { Clients } from "@/components/clients"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
@@ -18,7 +18,7 @@ export default function Home() {
       <Process />
       <Contact />
       <FAQ />
-      <Testimonials />
+      <Clients />
       <Footer />
     </main>
   )
