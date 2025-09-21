@@ -29,8 +29,10 @@ export function Hero() {
 
           {/* Subtítulo más liviano */}
           <p className="text-xl md:text-2xl mb-8 text-pretty text-orange-300 font-medium">
-            Conectamos tu negocio con los mejores proveedores chinos. Gestión completa de importaciones para empresas
-            que buscan calidad, seguridad y resultados garantizados.
+          Conectamos tu negocio con fabricas chinas.<br />
+          Nos ocupamos de absolutamente toda la gestión,<br />
+          desde la búsqueda del fabricante en China hasta la entrega final en tu depósito<br />
+          garantizando calidad, seguridad y resultados.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -60,21 +62,22 @@ export function Hero() {
                 <Shield className="h-8 w-8 text-orange-300" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Confianza Total</h3>
-              <p className="text-gray-200">Más de 500 importaciones exitosas</p>
+              <p className="text-gray-200">Más de 100 importaciones exitosas</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
                 <Globe className="h-8 w-8 text-orange-300" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Red Global</h3>
-              <p className="text-gray-200">Proveedores verificados en toda China</p>
+              <p className="text-gray-200">Proveedores Multirubro verificados en toda China</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
                 <Truck className="h-8 w-8 text-orange-300" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Logística Integral</h3>
-              <p className="text-gray-200">De fábrica a tu almacén sin complicaciones</p>
+              <p className="text-gray-200">De la fabrica a tu empresa sin complicaciones
+              </p>
             </div>
           </div>
         </div>
