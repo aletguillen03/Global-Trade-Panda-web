@@ -9,8 +9,9 @@ export function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Panda Global Trade</h3>
             <p className="text-primary-foreground/80 mb-4 text-pretty">
-              Tu socio confiable para importaciones desde China. Conectamos tu empresa con los mejores proveedores
-              asiáticos, garantizando calidad, seguridad y resultados exitosos en cada proceso.
+              Nos encargamos de todo el proceso de importación desde China para tu empresa: identificamos al fabricante
+              adecuado, gestionamos la producción y coordinamos la entrega en tu depósito. Conectamos tu negocio con
+              fábricas confiables, asegurando calidad, seguridad y resultados garantizados.
             </p>
             <div className="space-y-2">
               <div className="flex items-center space-x-2">

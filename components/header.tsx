@@ -94,51 +94,16 @@ export function Header() {
             <Button
               onClick={() => scrollToSection("contacto")}
               size="sm"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2 whitespace-nowrap"
               data-cta
               aria-label="Solicitar cotización"
             >
-              <span className="hidden sm:inline">Solicitar cotización</span>
-              <span className="sm:hidden">Cotización</span>
+              Solicitar cotización
             </Button>
           </div>
         </div>
 
-        {/* Navegación Mobile */}
-        <nav className="md:hidden border-t border-gray-700 py-2">
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <button 
-              onClick={() => scrollToSection("inicio")} 
-              className="text-xs text-white hover:text-accent transition-colors"
-            >
-              Inicio
-            </button>
-            <button 
-              onClick={() => scrollToSection("quienes-somos")} 
-              className="text-xs text-white hover:text-accent transition-colors"
-            >
-              Quiénes Somos
-            </button>
-            <button 
-              onClick={() => scrollToSection("proceso")} 
-              className="text-xs text-white hover:text-accent transition-colors"
-            >
-              Nuestro proceso
-            </button>
-            <button 
-              onClick={() => scrollToSection("preguntas")} 
-              className="text-xs text-white hover:text-accent transition-colors"
-            >
-              FAQ
-            </button>
-            <button 
-              onClick={() => scrollToSection("clientes-habituales")} 
-              className="text-xs text-white hover:text-accent transition-colors"
-            >
-              Clientes Habituales
-            </button>
-          </div>
-        </nav>
+        {/* Navegación Mobile intencionalmente removida para dejar solo marca y CTA */}
       </div>
     </header>
   )
