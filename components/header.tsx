@@ -13,6 +13,7 @@ export function Header() {
     if (el) el.scrollIntoView({ behavior: "smooth" })
   }
 
+
   return (
     <header
       role="banner"
@@ -81,10 +82,10 @@ export function Header() {
               FAQ
             </button>
             <button 
-              onClick={() => scrollToSection("testimonios")} 
+              onClick={() => scrollToSection("clientes-habituales")} 
               className="text-sm text-white hover:text-accent transition-colors"
             >
-              Testimonios
+              Clientes Habituales
             </button>
           </nav>
 
@@ -131,10 +132,10 @@ export function Header() {
               FAQ
             </button>
             <button 
-              onClick={() => scrollToSection("testimonios")} 
+              onClick={() => scrollToSection("clientes-habituales")} 
               className="text-xs text-white hover:text-accent transition-colors"
             >
-              Testimonios
+              Clientes Habituales
             </button>
           </div>
         </nav>

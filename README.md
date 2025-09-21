@@ -62,7 +62,7 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 │   ├── hero.tsx          # Sección hero con CTA
 │   ├── process.tsx       # Proceso de importación interactivo
 │   ├── services.tsx      # Servicios ofrecidos
-│   └── testimonials.tsx  # Testimonios de clientes
+│   └── clients.tsx  # Testimonios de clientes
 ├── lib/                  # Utilidades
 │   └── utils.ts          # Funciones helper
 ├── public/               # Archivos estáticos

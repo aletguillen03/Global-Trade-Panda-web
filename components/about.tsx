@@ -12,8 +12,13 @@ export function About() {
               <CardContent className="p-8 md:p-10">
                 <h3 className="text-2xl font-medium text-white mb-4 text-center">Quienes somos?</h3>
                 <p className="text-lg text-gray-300 text-pretty max-w-5xl text-center">
-                Somos especialistas en conectar empresas latinoamericanas con los mejores proveedores de China, ofreciendo
-                un servicio integral de importación que garantiza calidad, seguridad y transparencia en cada proceso.
+                Somos especialistas en conectar empresas de Argentina con fábricas en China verificadas previamente.<br />
+                Conocemos cada proceso, sus facilidades y dificultades, y contamos con el equipo para garantizar<br /> 
+                calidad, seguridad y transparencia en todo el proceso.<br />
+                <br />
+                Amoldamos nuestro servicio para cubrir todas las necesidades del cliente y garantizar una operación exitosa,<br /> 
+                consiguiendo un producto de excelente relacion precio calidad.
+
                 </p>
               </CardContent>
             </Card>
@@ -25,9 +30,8 @@ export function About() {
               <CardContent className="p-8 md:p-10">
                 <h3 className="text-2xl font-medium text-white mb-4 text-center">Nuestra Misión</h3>
                 <p className="text-lg text-gray-300 text-pretty max-w-5xl text-center">
-                  Facilitar el acceso de empresas a productos de China, ofreciendo un servicio de importación confiable,
-                  seguro y adaptado a cada necesidad. Nos comprometemos a ser el puente que conecta tu visión empresarial
-                  con las mejores oportunidades del mercado asiático.
+                Facilitar el acceso de empresas argentinas a productos fabricados en China,<br /> 
+                con el objetivo de mejorar la rentabilidad de la empresa o acelerar la rotación del producto. 
                 </p>
               </CardContent>
             </Card>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: ["/og.jpg"],
   },
   twitter: { card: "summary_large_image", site: "@tuusuario" },
-  icons: { icon: "/favicon.ico" },
+  icons: { icon: [{ url: "/images/48x48-favicon.png", sizes: "48x48", type: "image/png" }], shortcut: "/images/48x48-favicon.png" },
   generator: "v0.app",
 }
 
