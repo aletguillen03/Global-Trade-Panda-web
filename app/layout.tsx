@@ -5,7 +5,10 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Importaciones desde China para Empresas | Panda Global Trade",
+  title: {
+    default: "Panda Global Trade",
+    template: "%s | Panda Global Trade",
+  },
   description:
     "Agente integral de compras e importación desde China para empresas. Búsqueda de proveedores, negociación, control de calidad y logística puerta a puerta.",
   metadataBase: new URL("https://tudominio.com"),
@@ -13,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://tudominio.com",
-    title: "Importaciones desde China para Empresas",
+    title: "Panda Global Trade",
     description: "Gestión completa con foco en calidad, seguridad y cumplimiento.",
     images: ["/og.jpg"],
   },
