@@ -18,9 +18,21 @@ export const metadata: Metadata = {
     url: "https://pandaglobaltrade.com.ar",
     title: "Panda Global Trade",
     description: "Gestión completa con foco en calidad, seguridad y cumplimiento.",
-    images: ["/og.jpg"],
+    images: [
+      {
+        url: "/images/Global_Trade_Panda_logo.png",
+        width: 512,
+        height: 512,
+        alt: "Logo Panda Global Trade",
+      },
+    ],
   },
-  twitter: { card: "summary_large_image"},
+  twitter: {
+    card: "summary_large_image",
+    title: "Panda Global Trade",
+    description: "Gestión completa con foco en calidad, seguridad y cumplimiento.",
+    images: ["/images/Global_Trade_Panda_logo.png"],
+  },
   icons: { icon: [{ url: "/images/48x48-favicon.png", sizes: "48x48", type: "image/png" }], shortcut: "/images/48x48-favicon.png" },
   generator: "v0.app",
 }
