@@ -107,3 +107,14 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 - Testimonios de clientes
 - Casos de éxito
 
+## Integraciones y variables de entorno
+
+### Chatkit Widget
+- `NEXT_PUBLIC_CHATKIT_WIDGET_URL`: URL del script del widget de Chatkit que se inyecta de manera dinámica en el sitio.
+
+### Google Sheets
+- `GOOGLE_SHEETS_CLIENT_EMAIL`: Email del servicio (Service Account) con acceso de edición al Google Sheet.
+- `GOOGLE_SHEETS_PRIVATE_KEY`: Clave privada asociada al Service Account (recordá reemplazar los `\n` por saltos de línea reales en producción).
+- `GOOGLE_SHEETS_SPREADSHEET_ID`: Identificador del Google Sheet donde se registran las consultas.
+- `GOOGLE_SHEETS_QUOTE_RANGE` *(opcional)*: Rango donde se insertarán las respuestas. Por defecto se usa `Leads!A:G`.
+
