@@ -4,6 +4,8 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+pnpmfileChecksum: sha256-NIfhi+GV0GEYXdQ7yCELrl4PaGCur9QVCdBKa+5xeNg=
+
 importers:
 
   .:
@@ -179,7 +181,7 @@ importers:
         version: 18.3.7(@types/react@18.3.24)
       eslint:
         specifier: file:vendor/eslint
-        version: file:vendor/eslint
+        version: link:vendor/eslint
       postcss:
         specifier: ^8.5
         version: 8.5.6
@@ -192,6 +194,8 @@ importers:
       typescript:
         specifier: ^5.1.0
         version: 5.9.2
+
+  vendor/eslint: {}
 
 packages:
 
@@ -1147,9 +1151,6 @@ packages:
   escalade@3.2.0:
     resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==}
     engines: {node: '>=6'}
-
-  eslint@file:vendor/eslint:
-    resolution: {directory: vendor/eslint, type: directory}
 
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
@@ -2424,8 +2425,6 @@ snapshots:
       tapable: 2.2.3
 
   escalade@3.2.0: {}
-
-  eslint@file:vendor/eslint: {}
 
   eventemitter3@4.0.7: {}
 

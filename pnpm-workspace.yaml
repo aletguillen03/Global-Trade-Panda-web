@@ -1,8 +1,6 @@
-allowBuilds: true
-
-allowScripts: true
-
-onlyBuiltDependencies:
+packages:
+  - '**'
+allowedBuiltDependencies:
   - '@tailwindcss/oxide'
   - '@vercel/speed-insights'
   - esbuild
