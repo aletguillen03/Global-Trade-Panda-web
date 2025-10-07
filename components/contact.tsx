@@ -148,11 +148,12 @@ export function Contact() {
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className="space-y-2">
-                <label htmlFor="nombre" className="block text-base font-semibold">
+                <label htmlFor="nombre" className="block text-base font-bold">
                   Nombre
                 </label>
                 <Input
                   id="nombre"
+                  name="nombre"
                   placeholder="Ingresa tu nombre"
                   className="border-zinc-300 text-zinc-700 shadow-sm placeholder:text-zinc-500 focus-visible:border-zinc-400 focus-visible:ring-orange-200 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus-visible:border-zinc-500"
                   aria-invalid={errors.nombre ? 'true' : 'false'}
@@ -164,11 +165,12 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="empresa" className="block text-base font-semibold">
+                <label htmlFor="empresa" className="block text-base font-bold">
                   Empresa
                 </label>
                 <Input
                   id="empresa"
+                  name="empresa"
                   placeholder="Nombre de empresa"
                   className="border-zinc-300 text-zinc-700 shadow-sm placeholder:text-zinc-500 focus-visible:border-zinc-400 focus-visible:ring-orange-200 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus-visible:border-zinc-500"
                   aria-invalid={errors.empresa ? 'true' : 'false'}
@@ -180,12 +182,13 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="email" className="block text-base font-semibold">
+                <label htmlFor="email" className="block text-base font-bold">
                   Email
                 </label>
                 <Input
                   id="email"
                   type="email"
+                  name="email"
                   placeholder="Ingresa tu email"
                   className="border-zinc-300 text-zinc-700 shadow-sm placeholder:text-zinc-500 focus-visible:border-zinc-400 focus-visible:ring-orange-200 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus-visible:border-zinc-500"
                   aria-invalid={errors.email ? 'true' : 'false'}
@@ -197,12 +200,13 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="telefono" className="block text-base font-semibold">
+                <label htmlFor="telefono" className="block text-base font-bold">
                   Número de teléfono
                 </label>
                 <Input
                   id="telefono"
                   type="tel"
+                  name="telefono"
                   placeholder="Ej: +54 11 1234 5678"
                   className="border-zinc-300 text-zinc-700 shadow-sm placeholder:text-zinc-500 focus-visible:border-zinc-400 focus-visible:ring-orange-200 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus-visible:border-zinc-500"
                   aria-invalid={errors.telefono ? 'true' : 'false'}
@@ -214,11 +218,12 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="consulta" className="block text-base font-semibold">
+                <label htmlFor="consulta" className="block text-base font-bold">
                   Consulta
                 </label>
                 <Textarea
                   id="consulta"
+                  name="consulta"
                   placeholder="Qué productos o insumos desearía importar"
                   className="border-zinc-300 text-zinc-700 shadow-sm placeholder:text-zinc-500 focus-visible:border-zinc-400 focus-visible:ring-orange-200 dark:border-zinc-700 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus-visible:border-zinc-500"
                   aria-invalid={errors.consulta ? 'true' : 'false'}
