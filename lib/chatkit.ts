@@ -1,10 +1,9 @@
 export interface ChatkitQuotePayload {
-  nombre_completo: string
+  nombre: string
   empresa: string
   email: string
   telefono: string
   consulta: string
-  volumen_estimado: string
   [key: string]: unknown
 }
 

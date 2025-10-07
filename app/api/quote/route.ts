@@ -3,12 +3,11 @@ import { z } from 'zod'
 import { createSign } from 'node:crypto'
 
 const quotePayloadSchema = z.object({
-  nombre_completo: z.string().min(1),
+  nombre: z.string().min(1),
   empresa: z.string().min(1),
   email: z.string().email(),
   telefono: z.string().min(1),
   consulta: z.string().min(1),
-  volumen_estimado: z.string().min(1),
   origen: z.string().optional(),
 })
 
@@ -106,12 +105,11 @@ async function appendQuoteToSheet(payload: z.infer<typeof quotePayloadSchema>) {
   const values = [
     [
       new Date().toISOString(),
-      payload.nombre_completo,
+      payload.nombre,
       payload.empresa,
       payload.email,
       payload.telefono,
       payload.consulta,
-      payload.volumen_estimado,
       payload.origen ?? 'website',
     ],
   ]
