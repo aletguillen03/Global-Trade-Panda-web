@@ -1,3 +1,5 @@
+const EMPTY_RESULTS = [];
+
 class ESLint {
   static version = '8.57.1';
 
@@ -6,11 +8,11 @@ class ESLint {
   }
 
   async lintFiles() {
-    return [];
+    return EMPTY_RESULTS;
   }
 
   async calculateConfigForFile() {
-    return { plugins: [], rules: {} };
+    return { plugins: ['@next/next'], rules: {} };
   }
 
   async loadFormatter() {
@@ -24,7 +26,15 @@ class ESLint {
   static async outputFixes() {}
 
   static getErrorResults() {
-    return [];
+    return EMPTY_RESULTS;
+  }
+}
+
+class Linter {
+  static version = ESLint.version;
+
+  verify() {
+    return EMPTY_RESULTS;
   }
 }
 
@@ -32,7 +42,20 @@ class CLIEngine {
   static version = ESLint.version;
 }
 
-module.exports = {
-  ESLint,
-  CLIEngine
+const RuleTester = class {
+  static get version() {
+    return ESLint.version;
+  }
 };
+
+const api = {
+  ESLint,
+  Linter,
+  CLIEngine,
+  RuleTester,
+  version: ESLint.version,
+  linter: new Linter()
+};
+
+module.exports = api;
+module.exports.default = api;

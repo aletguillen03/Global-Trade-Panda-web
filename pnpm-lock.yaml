@@ -180,9 +180,6 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.0
         version: 18.3.7(@types/react@18.3.24)
-      '@typescript-eslint/parser':
-        specifier: ^7.18.0
-        version: 7.18.0
       eslint:
         specifier: file:vendor/eslint
         version: link:vendor/eslint
@@ -200,9 +197,6 @@ importers:
         version: 5.9.2
 
 packages:
-
-  '@typescript-eslint/parser@7.18.0':
-    resolution: {tarball: https://registry.npmjs.org/@typescript-eslint/parser/-/parser-7.18.0.tgz}
 
   'eslint@file:vendor/eslint':
     resolution: {directory: vendor/eslint, type: directory}

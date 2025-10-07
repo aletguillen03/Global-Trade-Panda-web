@@ -68,7 +68,6 @@
     "@types/node": "^22.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
-    "@typescript-eslint/parser": "^7.18.0",
     "eslint": "file:vendor/eslint",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",

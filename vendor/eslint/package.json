@@ -3,5 +3,6 @@
   "version": "8.57.1",
   "description": "Stub ESLint implementation for offline linting in CI",
   "main": "lib/index.js",
+  "type": "commonjs",
   "license": "MIT"
 }
