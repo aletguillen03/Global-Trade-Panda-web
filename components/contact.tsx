@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Mail } from 'lucide-react'
 
 import {
   Card,
@@ -13,25 +12,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { Select } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { submitChatkitQuote } from '@/lib/chatkit'
 import { persistQuoteLead } from '@/lib/quotes'
 
-const volumeOptions = [
-  { value: 'menos_de_1_tonelada', label: 'Menos de 1 tonelada' },
-  { value: '1_5_toneladas', label: 'Entre 1 y 5 toneladas' },
-  { value: 'mas_de_5_toneladas', label: 'Más de 5 toneladas' },
-  { value: 'a_un_cargar', label: 'A definir / Consultar' },
-  { value: 'muestras', label: 'Sólo muestras' },
-] as const
-
 const quoteFormSchema = z.object({
-  nombre_completo: z
-    .string({ required_error: 'Ingresá tu nombre completo.' })
-    .min(3, 'Ingresá tu nombre completo.'),
+  nombre: z
+    .string({ required_error: 'Ingresá tu nombre.' })
+    .min(3, 'Ingresá tu nombre.'),
   empresa: z
     .string({ required_error: 'Ingresá el nombre de tu empresa.' })
     .min(2, 'Ingresá el nombre de tu empresa.'),
@@ -44,9 +33,6 @@ const quoteFormSchema = z.object({
   consulta: z
     .string({ required_error: 'Contanos qué necesitás importar.' })
     .min(10, 'Contanos qué necesitás importar.'),
-  volumen_estimado: z
-    .string({ required_error: 'Seleccioná el volumen estimado.' })
-    .min(1, 'Seleccioná el volumen estimado.'),
 })
 
 type QuoteFormValues = z.infer<typeof quoteFormSchema>
@@ -93,12 +79,11 @@ export function Contact() {
   } = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
-      nombre_completo: '',
+      nombre: '',
       empresa: '',
       email: '',
       telefono: '',
       consulta: '',
-      volumen_estimado: '',
     },
   })
 
@@ -158,40 +143,34 @@ export function Contact() {
           </CardHeader>
           <CardContent className="pb-8">
             <form
-              className="flex flex-col gap-5"
+              className="space-y-4"
               noValidate
               onSubmit={handleSubmit(onSubmit)}
             >
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-zinc-700"
-                  htmlFor="nombre_completo"
-                >
-                  Nombre completo
+              <div className="space-y-2">
+                <label htmlFor="nombre" className="block text-base font-medium">
+                  Nombre
                 </label>
                 <Input
-                  id="nombre_completo"
-                  placeholder="Tu nombre y apellido"
-                  aria-invalid={errors.nombre_completo ? 'true' : 'false'}
-                  {...register('nombre_completo')}
+                  id="nombre"
+                  placeholder="Ingresa tu nombre"
+                  className="border-gray-300 focus-visible:ring-gray-300 focus-visible:border-gray-400"
+                  aria-invalid={errors.nombre ? 'true' : 'false'}
+                  {...register('nombre')}
                 />
-                {errors.nombre_completo && (
-                  <p className="text-sm text-rose-600">
-                    {errors.nombre_completo.message}
-                  </p>
+                {errors.nombre && (
+                  <p className="text-sm text-rose-600">{errors.nombre.message}</p>
                 )}
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-zinc-700"
-                  htmlFor="empresa"
-                >
-                  Empresa u organización
+              <div className="space-y-2">
+                <label htmlFor="empresa" className="block text-base font-medium">
+                  Empresa
                 </label>
                 <Input
                   id="empresa"
-                  placeholder="Nombre de la empresa / organización"
+                  placeholder="Nombre de empresa"
+                  className="border-gray-300 focus-visible:ring-gray-300 focus-visible:border-gray-400"
                   aria-invalid={errors.empresa ? 'true' : 'false'}
                   {...register('empresa')}
                 />
@@ -200,108 +179,63 @@ export function Contact() {
                 )}
               </div>
 
-              <div className="grid gap-5 md:grid-cols-2">
-                <div className="flex flex-col gap-2">
-                  <label
-                    className="text-sm font-medium text-zinc-700"
-                    htmlFor="email"
-                  >
-                    Email corporativo
-                  </label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="usuario@empresa.com"
-                    aria-invalid={errors.email ? 'true' : 'false'}
-                    {...register('email')}
-                  />
-                  {errors.email && (
-                    <p className="text-sm text-rose-600">{errors.email.message}</p>
-                  )}
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label
-                    className="text-sm font-medium text-zinc-700"
-                    htmlFor="telefono"
-                  >
-                    Teléfono / WhatsApp
-                  </label>
-                  <Input
-                    id="telefono"
-                    type="tel"
-                    placeholder="Ej: +54 9 11 2345-6789"
-                    aria-invalid={errors.telefono ? 'true' : 'false'}
-                    {...register('telefono')}
-                  />
-                  {errors.telefono && (
-                    <p className="text-sm text-rose-600">
-                      {errors.telefono.message}
-                    </p>
-                  )}
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="block text-base font-medium">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Ingresa tu email"
+                  className="border-gray-300 focus-visible:ring-gray-300 focus-visible:border-gray-400"
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  {...register('email')}
+                />
+                {errors.email && (
+                  <p className="text-sm text-rose-600">{errors.email.message}</p>
+                )}
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-zinc-700"
-                  htmlFor="consulta"
-                >
-                  Contanos tu consulta
+              <div className="space-y-2">
+                <label htmlFor="telefono" className="block text-base font-medium">
+                  Número de teléfono
+                </label>
+                <Input
+                  id="telefono"
+                  type="tel"
+                  placeholder="Ej: +54 11 1234 5678"
+                  className="border-gray-300 focus-visible:ring-gray-300 focus-visible:border-gray-400"
+                  aria-invalid={errors.telefono ? 'true' : 'false'}
+                  {...register('telefono')}
+                />
+                {errors.telefono && (
+                  <p className="text-sm text-rose-600">{errors.telefono.message}</p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="consulta" className="block text-base font-medium">
+                  Consulta
                 </label>
                 <Textarea
                   id="consulta"
-                  rows={4}
-                  placeholder="¿Qué producto o insumos querés importar? Detallá cantidades, especificaciones, destino, etc."
+                  placeholder="Qué productos o insumos desearía importar"
+                  className="border-gray-300 focus-visible:ring-gray-300 focus-visible:border-gray-400"
                   aria-invalid={errors.consulta ? 'true' : 'false'}
                   {...register('consulta')}
                 />
                 {errors.consulta && (
-                  <p className="text-sm text-rose-600">
-                    {errors.consulta.message}
-                  </p>
+                  <p className="text-sm text-rose-600">{errors.consulta.message}</p>
                 )}
               </div>
 
-              <div className="flex flex-col gap-2">
-                <label
-                  className="text-sm font-medium text-zinc-700"
-                  htmlFor="volumen_estimado"
-                >
-                  Volumen estimado
-                </label>
-                <Select
-                  id="volumen_estimado"
-                  defaultValue=""
-                  aria-invalid={errors.volumen_estimado ? 'true' : 'false'}
-                  {...register('volumen_estimado')}
-                >
-                  <option value="" disabled>
-                    Seleccioná el volumen
-                  </option>
-                  {volumeOptions.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </Select>
-                {errors.volumen_estimado && (
-                  <p className="text-sm text-rose-600">
-                    {errors.volumen_estimado.message}
-                  </p>
-                )}
-              </div>
-
-              <Button
+              <button
                 type="submit"
-                className="mt-1 h-11"
+                className="mt-4 inline-block rounded-md bg-orange-500 px-6 py-3 text-white hover:bg-orange-600 disabled:cursor-not-allowed disabled:opacity-80"
                 disabled={isSubmitting || status === 'loading'}
               >
-                <Mail className="size-4" />
-                {isSubmitting || status === 'loading'
-                  ? 'Enviando...'
-                  : 'Solicitar Cotización'}
-              </Button>
+                {isSubmitting || status === 'loading' ? 'Enviando...' : 'Enviar'}
+              </button>
             </form>
 
             {status === 'success' && (
