@@ -41,7 +41,7 @@ export function Hero() {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-4 shadow-lg"
             >
-              Solicitar Cotización
+              Consultar
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
 
