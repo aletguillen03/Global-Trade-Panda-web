@@ -104,7 +104,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden bg-black/20 backdrop-blur-md border-t border-white/10 py-4">
+          <nav className="md:hidden border-t border-white/10 py-4">
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("inicio")}
