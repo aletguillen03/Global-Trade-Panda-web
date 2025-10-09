@@ -65,7 +65,7 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 
 ## Estructura
 
-```
+\`\`\`
 ├── app/                    # App Router de Next.js
 │   ├── globals.css        # Estilos globales y variables CSS
 │   ├── layout.tsx         # Layout principal con metadata
@@ -86,7 +86,7 @@ Panda Global Trade es una empresa especializada en servicios de importación des
 ├── public/               # Archivos estáticos
 │   └── images/           # Imágenes del sitio
 └── styles/               # Archivos de estilos adicionales
-```
+\`\`\`
 
 ## Secciones
 
