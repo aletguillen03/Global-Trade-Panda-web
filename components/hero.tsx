@@ -29,10 +29,13 @@ export function Hero() {
 
           {/* Subtítulo más liviano */}
           <p className="text-xl md:text-2xl mb-8 text-pretty text-orange-300 font-medium">
-          Conectamos tu negocio con fabricas chinas.<br />
-          Nos ocupamos de absolutamente toda la gestión,<br />
-          desde la búsqueda del fabricante en China hasta la entrega final en tu depósito<br />
-          garantizando calidad, seguridad y resultados.
+            Conectamos tu negocio con fabricas chinas.
+            <br />
+            Nos ocupamos de absolutamente toda la gestión,
+            <br />
+            desde la búsqueda del fabricante en China hasta la entrega final en tu depósito
+            <br />
+            garantizando calidad, seguridad y resultados.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -41,7 +44,7 @@ export function Hero() {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-4 shadow-lg"
             >
-              Solicitar Cotización
+              Consulta
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
 
@@ -76,8 +79,7 @@ export function Hero() {
                 <Truck className="h-8 w-8 text-orange-300" />
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Logística Integral</h3>
-              <p className="text-gray-200">De la fabrica a tu empresa sin complicaciones
-              </p>
+              <p className="text-gray-200">De la fabrica a tu empresa sin complicaciones</p>
             </div>
           </div>
         </div>

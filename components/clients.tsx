@@ -1,4 +1,4 @@
-﻿import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Building2, Factory, Layers, ShoppingCart, Users } from "lucide-react"
 
 const clientSegments = [
