@@ -6,8 +6,8 @@ import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
 /** Editá solo estos dos números para cambiar el tamaño del logo */
-const LOGO_SIZE_MOBILE = 45 // px (reducido 20%)
-const LOGO_SIZE_DESKTOP = 77 // px (reducido 20%)
+const LOGO_SIZE_MOBILE = 38 // px (reducido 15% adicional)
+const LOGO_SIZE_DESKTOP = 65 // px (reducido 15% adicional)
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header role="banner" className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-3 md:py-4">
+        <div className="flex items-center justify-between py-2 md:py-3">
           {/* Logo + Nombre */}
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Mobile */}
@@ -104,7 +104,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t border-white/10 py-4">
+          <nav className="md:hidden border-t border-white/10 py-3">
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("inicio")}
