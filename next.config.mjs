@@ -5,21 +5,6 @@ const nextConfig = {
   images: { unoptimized: true },
 
   async headers() {
-    const chatkitOrigins = (() => {
-      const sources = new Set()
-      const raw = process.env.NEXT_PUBLIC_CHATKIT_WIDGET_URL
-      if (!raw) return sources
-
-      try {
-        const { origin } = new URL(raw)
-        sources.add(origin)
-      } catch (error) {
-        console.warn('[csp] Invalid NEXT_PUBLIC_CHATKIT_WIDGET_URL', error)
-      }
-
-      return sources
-    })()
-
     const toDirective = (name, values) => `${name} ${Array.from(values).join(' ')}`
 
     const defaultSrc = new Set(["'self'"])
@@ -36,12 +21,6 @@ const nextConfig = {
     const baseUri = new Set(["'self'"])
     const formAction = new Set(["'self'"])
     const frameAncestors = new Set(["'self'"])
-
-    chatkitOrigins.forEach((origin) => {
-      frameSrc.add(origin)
-      scriptSrc.add(origin)
-      connectSrc.add(origin)
-    })
 
     const directives = [
       toDirective('default-src', defaultSrc),

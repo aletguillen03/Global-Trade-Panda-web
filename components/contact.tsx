@@ -8,7 +8,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { submitChatkitQuote } from "@/lib/chatkit"
 import { persistQuoteLead } from "@/lib/quotes"
 
 const quoteFormSchema = z.object({
@@ -77,15 +76,6 @@ export function Contact() {
         ...values,
         origen: "website",
       })
-
-      try {
-        await submitChatkitQuote({
-          ...values,
-          origen: "website",
-        })
-      } catch (chatkitError) {
-        console.error("[chatkit] quote submission forwarding failed", chatkitError)
-      }
 
       setStatus("success")
       reset()

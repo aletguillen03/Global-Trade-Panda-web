@@ -1,14 +1,17 @@
-import type { ChatkitQuotePayload } from '@/lib/chatkit'
-
-export type QuoteLeadPayload = ChatkitQuotePayload & {
+export type QuoteLeadPayload = {
+  nombre: string
+  empresa: string
+  email: string
+  telefono: string
+  consulta: string
   origen?: string
 }
 
 export async function persistQuoteLead(payload: QuoteLeadPayload) {
-  const response = await fetch('/api/quote', {
-    method: 'POST',
+  const response = await fetch("/api/quote", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(payload),
   })
