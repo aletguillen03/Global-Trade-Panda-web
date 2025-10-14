@@ -8,10 +8,6 @@ export function Services() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-medium text-primary mb-6">Nuestros Servicios</h2>
-            <p className="text-xl text-secondary text-pretty max-w-3xl mx-auto">
-              Te acompañamos en cada etapa del proceso de importación, desde la identificación del proveedor hasta la
-              entrega en tu almacén. Un servicio integral que elimina las complejidades de importar desde China.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
@@ -24,7 +20,7 @@ export function Services() {
               </CardHeader>
               <CardContent>
                 <p className="text-secondary text-center">
-                  Nos ocupamos absolutamente de todo el proceso, desde la búsqueda del proveedor hasta la entrega final.
+                 Gestionamos íntegramente toda la importación, desde la selección del fabricante hasta la entrega en tu depósito.
                 </p>
               </CardContent>
             </Card>
@@ -38,10 +34,7 @@ export function Services() {
               </CardHeader>
               <CardContent>
                 <p className="text-secondary text-center">
-                  Nos encargamos de dar con el fabricante en China que cumpla todos los requisitos que estás necesitando.
-                  <br />
-                  (Idealmente pensado para empresas que ya tienen su despachante e importan pero no han dado aún con el
-                  fabricante esperado, ya sea por cuestiones de precio o calidad.)
+                  Nos encargamos de dar con el fabricante Localizamos el fabricante ideal en China según tus requerimientos.Servicio orientado a empresas con experiencia importando y que precisan optimizar la selección de proveedores en costo, calidad o confiabilidad.
                 </p>
               </CardContent>
             </Card>

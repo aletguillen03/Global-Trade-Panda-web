@@ -17,8 +17,8 @@ export default function Home() {
       <Services />
       <Process />
       <Contact />
-      <FAQ />
       <Clients />
+      <FAQ />
       <Footer />
     </main>
   )

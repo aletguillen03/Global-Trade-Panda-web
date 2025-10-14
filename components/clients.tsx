@@ -6,31 +6,31 @@ const clientSegments = [
     icon: Building2,
     title: "Distribuidores en expansión",
     description:
-      "Empresas que buscan maximizar su rentabilidad y aumentar el volumen de ventas con productos líderes.",
+      "Distribuidores que buscan escalar ventas y margen importando directamente.",
   },
   {
     icon: Layers,
     title: "Distribuidores en alerta",
     description:
-      "Negocios que ven cómo importadores y fabricantes empiezan a saltar la cadena de distribución tradicional.",
+      "Empresas que quieren evitar quedar fuera de la cadena por importadores directos.",
   },
   {
     icon: Users,
     title: "Importadores exigentes",
     description:
-      "Equipos que aún no encuentran la fábrica con los mejores precios y condiciones en China.",
+      "Empresas que buscan mejores fábricas, precios o condiciones en China.",
   },
   {
     icon: Factory,
-    title: "Fabricantes en búsqueda",
+    title: "Fabricantes",
     description:
-      "Plantas que necesitan insumos o materia prima específica para mejorar calidad y reducir costos.",
+      "Fabricantes que requieren insumos o materia prima importada para optimizar costos y calidad.",
   },
   {
     icon: ShoppingCart,
     title: "Emprendedores mayoristas",
     description:
-      "Personas que quieren iniciar un negocio local con productos terminados importados al por mayor.",
+      "Emprendedores que buscan importar productos terminados para revender.",
   },
 ]
 
@@ -42,8 +42,7 @@ export function Clients() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Clientes habituales</h2>
             <p className="text-xl text-gray-300 text-pretty max-w-4xl mx-auto">
-              Trabajamos con compañías y emprendedores que necesitan importar con estructura profesional: desde
-              distribuidores consolidados hasta fabricantes y nuevos proyectos mayoristas listos para escalar.
+              Trabajamos con empresas, fabricantes y distribuidores que buscan importar productos, maquinaria o materias primas directamente de fábricas en China
             </p>
           </div>
 
@@ -81,8 +80,7 @@ export function Clients() {
 
           <div className="mt-16 text-center">
             <p className="text-gray-400 text-sm">
-              Si tu empresa o proyecto encaja en uno de estos perfiles, conversemos y diseñemos un plan de importación a
-              medida.
+              Si tu empresa encaja en estos perfiles, podemos diseñar un plan de importacion a medida. Ponete en contacto y lo hablamos juntos.
             </p>
           </div>
         </div>

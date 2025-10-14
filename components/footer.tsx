@@ -16,15 +16,15 @@ export function Footer() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">contacto@globaltradepanda.com</span>
+                <span className="text-sm">globaltradepanda@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+54 9 3758-0087 </span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm">Buenos Aires, Argentina</span>
+                <span className="text-sm">Zarate 6154, San Martín, Buenos Aires</span>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60 text-sm">
             © 2024 Panda Global Trade. Todos los derechos reservados. | Especialistas en importaciones desde China para
-            empresas latinoamericanas.
+            empresas argentinas.
           </p>
         </div>
       </div>
