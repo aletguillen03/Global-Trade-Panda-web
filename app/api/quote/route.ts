@@ -87,7 +87,7 @@ async function getServiceAccountAccessToken() {
 
 async function appendQuoteToSheet(payload: z.infer<typeof quotePayloadSchema>) {
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID
-  const range = process.env.GOOGLE_SHEETS_QUOTE_RANGE ?? 'Leads!A:G'
+  const range = process.env.GOOGLE_SHEETS_QUOTE_RANGE ?? 'Hoja 1!A:E'
 
   if (!spreadsheetId) {
     throw new Error('Falta la variable de entorno GOOGLE_SHEETS_SPREADSHEET_ID.')
