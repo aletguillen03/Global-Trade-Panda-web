@@ -91,7 +91,7 @@ export function Contact() {
   }
 
   return (
-    <section className="bg-white dark:bg-zinc-900">
+    <section id="contacto" className="bg-white dark:bg-zinc-900">
       <div className="container mx-auto px-4 py-8">
         <Card className="mt-8 border-zinc-200 shadow-lg">
           <CardHeader className="space-y-3 text-center">
