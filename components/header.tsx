@@ -69,16 +69,22 @@ export function Header() {
               Nuestro proceso
             </button>
             <button
+              onClick={() => scrollToSection("clientes-habituales")}
+              className="text-sm text-white hover:text-accent transition-colors"
+            >
+              Clientes Habituales
+            </button>
+            <button
               onClick={() => scrollToSection("preguntas")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
               FAQ
             </button>
             <button
-              onClick={() => scrollToSection("clientes-habituales")}
+              onClick={() => scrollToSection("info-contacto")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
-              Clientes Habituales
+              Contacto
             </button>
             <Button
               onClick={() => scrollToSection("contacto")}
@@ -125,16 +131,22 @@ export function Header() {
                 Nuestro proceso
               </button>
               <button
+                onClick={() => scrollToSection("clientes-habituales")}
+                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
+              >
+                Clientes Habituales
+              </button>
+              <button
                 onClick={() => scrollToSection("preguntas")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
                 FAQ
               </button>
               <button
-                onClick={() => scrollToSection("clientes-habituales")}
+                onClick={() => scrollToSection("info-contacto")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
-                Clientes Habituales
+                Contacto
               </button>
               <Button
                 onClick={() => scrollToSection("contacto")}

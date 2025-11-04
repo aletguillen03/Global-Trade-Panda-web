@@ -3,36 +3,39 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQ() {
   const faqs = [
     {
-      question: "¿Cuáles son los tiempos de entrega típicos?",
-      answer: ""
+      question: "¿No estoy dado de alta como importador. Puedo trabajar con ustedes?",
+      answer:
+        "Sí. No es necesario que estés inscripto como importador. Realizamos la importación bajo nuestra empresa y luego le facturamos a tu empresa con CUIT argentino. Si más adelante querés darte de alta, también podemos asesorarte y funcionar como brokers, pero no es un requisito para empezar.",
     },
     {
-      question: "¿Cuál es el volumen mínimo de importación?",
-      answer: ""
+      question: "¿Cuánto cuesta el servicio? ¿Se cobra fijo, comisión o porcentaje?",
+      answer:
+        "El precio del servicio se define según la operación: puede ser una tarifa fija, comisión o porcentaje del valor de la operación, dependiendo del volumen y complejidad. Te damos una propuesta personalizada tras conocer tu proyecto.",
     },
     {
-      question: "¿Qué garantías ofrecen sobre la calidad de los productos?",
-      answer: ""
+      question: "¿Qué tipos de productos, maquinaria o insumos puedo importar?",
+      answer:
+        "Importamos productos multirubro, maquinaria industrial y materias primas. Nos ajustamos a tus especificaciones técnicas, volúmenes y estándares de calidad.",
     },
     {
-      question: "¿Cómo manejan los trámites aduaneros y documentación?",
-      answer: ""
+      question: "¿Cuál es el monto mínimo para importar con ustedes?",
+      answer:
+        "El monto mínimo depende del tipo de producto, volumen y logística involucrada. Podemos adaptarnos a diferentes escalas, desde lotes pequeños hasta contenedores completos. Contactanos y evaluamos caso por caso.",
     },
     {
-      question: "¿Qué costos adicionales debo considerar?",
-      answer: "" 
+      question: "¿Trabajan solo con empresas o también con personas?",
+      answer:
+        "Nuestro servicio está principalmente orientado a empresas, distribuidores, fabricantes y proyectos mayoristas. Si sos emprendedor, también podemos analizar tu caso para ver si es viable.",
     },
     {
-      question: "¿Pueden ayudar con productos personalizados o con mi marca?",
-      answer: ""
+      question: "¿Cuánto tarda una importación desde que empieza el proceso hasta la entrega?",
+      answer:
+        "El plazo varía según producto, proveedor y logística. En general, un proceso completo puede tomar entre 8 y 16 semanas, considerando fabricación, trámites aduaneros y transporte. (Nota: Este es un estimado — se puede ajustar según cada operación)",
     },
     {
-      question: "¿Qué pasa si hay problemas con el proveedor o la mercancía?",
-      answer: ""
-    },
-    {
-      question: "¿Ofrecen financiamiento o facilidades de pago?",
-      answer: ""
+      question: "¿Puedo trabajar con mi propio despachante de aduana?",
+      answer:
+        "Sí. Nuestro servicio de Gestión de Broker está pensado precisamente para quienes ya tienen despachante propio y solo necesitan encontrar el proveedor adecuado en China.",
     },
   ]
 
@@ -52,7 +55,7 @@ export function FAQ() {
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
                 <AccordionTrigger className="text-left text-primary hover:text-accent">{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-secondary">{faq.answer}</AccordionContent>
+                <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
