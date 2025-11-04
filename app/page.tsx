@@ -18,11 +18,10 @@ export default function Home() {
       <About />
       <Services />
       <Process />
-      <ContactInfo />
       <Clients />
       <Cases />
+      <ContactInfo />
       <FAQ />
-      <Contact />
       <Footer />
     </main>
   )
