@@ -40,8 +40,8 @@ export function About() {
           {/* Nuestros Valores */}
           <div>
             <h3 className="text-2xl font-medium text-white mb-8 text-center">Nuestros Valores</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="text-center bg-gray-900 border-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:justify-items-center lg:max-w-5xl lg:mx-auto">
+              <Card className="text-center bg-gray-900 border-gray-700 lg:w-full">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Heart className="h-6 w-6 text-orange-400" />
@@ -53,7 +53,7 @@ export function About() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center bg-gray-900 border-gray-700">
+              <Card className="text-center bg-gray-900 border-gray-700 lg:w-full">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Eye className="h-6 w-6 text-orange-400" />
@@ -66,7 +66,7 @@ export function About() {
                 </CardContent>
               </Card>
 
-              <Card className="text-center bg-gray-900 border-gray-700">
+              <Card className="text-center bg-gray-900 border-gray-700 lg:w-full">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <CheckCircle className="h-6 w-6 text-orange-400" />

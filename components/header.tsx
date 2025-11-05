@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header role="banner" className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between py-2 md:py-3">
+        <div className="flex items-center justify-between py-2 md:py-2">
           {/* Logo + Nombre */}
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Mobile */}
