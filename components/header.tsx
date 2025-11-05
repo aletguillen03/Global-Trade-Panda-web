@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
-/** Editá solo estos dos números para cambiar el tamaño del logo */
-const LOGO_SIZE_MOBILE = 38 // px (reducido 15% adicional)
-const LOGO_SIZE_DESKTOP = 65 // px (reducido 15% adicional)
+/** Estos dos números son para cambiar el tamaño del logo */
+const LOGO_SIZE_MOBILE = 38 
+const LOGO_SIZE_DESKTOP = 65
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
