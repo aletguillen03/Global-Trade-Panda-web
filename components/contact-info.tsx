@@ -11,7 +11,7 @@ export function ContactInfo() {
   }
 
   const openWhatsapp = () => {
-    const phoneNumber = "5491137580087"
+    const phoneNumber = "54937580087"
     const message = "Hola, me gustaría consultar sobre sus servicios de importación."
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
     setShowWhatsappConfirm(false)
@@ -44,7 +44,7 @@ export function ContactInfo() {
             </div>
             <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
             <button onClick={handleWhatsapp} className="text-accent hover:text-accent/80 transition-colors font-medium">
-              +54 9 3758-0087
+              +54 9 11 3758-0087
             </button>
           </div>
 
