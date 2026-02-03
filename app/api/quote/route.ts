@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
-import { createSign } from 'node:crypto'
+import { google } from 'googleapis'
 
 const quotePayloadSchema = z.object({
   nombre: z.string().min(1),
@@ -11,24 +11,35 @@ const quotePayloadSchema = z.object({
   origen: z.string().optional(),
 })
 
-const GOOGLE_OAUTH_TOKEN_URL = 'https://oauth2.googleapis.com/token'
-const GOOGLE_SHEETS_SCOPE = 'https://www.googleapis.com/auth/spreadsheets'
+// Rate limiting store (in-memory, resets on cold start)
+const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
+const RATE_LIMIT_WINDOW_MS = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX_REQUESTS = 5 // max 5 requests per minute per IP
 
-type GoogleTokenResponse = {
-  access_token: string
-  token_type: string
-  expires_in: number
+function getClientIp(request: Request): string {
+  const forwarded = request.headers.get('x-forwarded-for')
+  const realIp = request.headers.get('x-real-ip')
+  return forwarded?.split(',')[0]?.trim() ?? realIp ?? 'unknown'
 }
 
-function base64UrlEncode(input: Buffer | string) {
-  return Buffer.from(input)
-    .toString('base64')
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/g, '')
+function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  const record = rateLimitStore.get(ip)
+
+  if (!record || now > record.resetTime) {
+    rateLimitStore.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW_MS })
+    return false
+  }
+
+  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return true
+  }
+
+  record.count++
+  return false
 }
 
-async function getServiceAccountAccessToken() {
+async function getGoogleSheetsClient() {
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')
 
@@ -38,69 +49,26 @@ async function getServiceAccountAccessToken() {
     )
   }
 
-  const now = Math.floor(Date.now() / 1000)
-  const header = {
-    alg: 'RS256',
-    typ: 'JWT',
-  }
-
-  const claims = {
-    iss: clientEmail,
-    scope: GOOGLE_SHEETS_SCOPE,
-    aud: GOOGLE_OAUTH_TOKEN_URL,
-    exp: now + 3600,
-    iat: now,
-  }
-
-  const encodedHeader = base64UrlEncode(JSON.stringify(header))
-  const encodedClaims = base64UrlEncode(JSON.stringify(claims))
-  const unsignedToken = `${encodedHeader}.${encodedClaims}`
-
-  const signer = createSign('RSA-SHA256')
-  signer.update(unsignedToken)
-  signer.end()
-  const signature = base64UrlEncode(signer.sign(privateKey))
-
-  const assertion = `${unsignedToken}.${signature}`
-
-  const body = new URLSearchParams({
-    grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer',
-    assertion,
-  })
-
-  const response = await fetch(GOOGLE_OAUTH_TOKEN_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+  const auth = new google.auth.GoogleAuth({
+    credentials: {
+      client_email: clientEmail,
+      private_key: privateKey,
     },
-    body: body.toString(),
+    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   })
 
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`No se pudo obtener un token de acceso: ${errorText}`)
-  }
-
-  const data = (await response.json()) as GoogleTokenResponse
-  return data.access_token
+  return google.sheets({ version: 'v4', auth })
 }
 
 async function appendQuoteToSheet(payload: z.infer<typeof quotePayloadSchema>) {
   const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID
-  const range = process.env.GOOGLE_SHEETS_QUOTE_RANGE ?? 'Hoja 1!A:E'
+  const range = process.env.GOOGLE_SHEETS_QUOTE_RANGE ?? 'Hoja 1!A:G'
 
   if (!spreadsheetId) {
     throw new Error('Falta la variable de entorno GOOGLE_SHEETS_SPREADSHEET_ID.')
   }
 
-  const accessToken = await getServiceAccountAccessToken()
-
-  const url = new URL(
-    `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${encodeURIComponent(
-      range,
-    )}:append`,
-  )
-  url.searchParams.set('valueInputOption', 'USER_ENTERED')
+  const sheets = await getGoogleSheetsClient()
 
   const values = [
     [
@@ -114,22 +82,28 @@ async function appendQuoteToSheet(payload: z.infer<typeof quotePayloadSchema>) {
     ],
   ]
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ values }),
+  const response = await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    range,
+    valueInputOption: 'USER_ENTERED',
+    requestBody: { values },
   })
 
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`No se pudo registrar la consulta en Sheets: ${errorText}`)
+  if (response.status !== 200) {
+    throw new Error(`No se pudo registrar la consulta en Sheets: ${response.statusText}`)
   }
 }
 
 export async function POST(request: Request) {
+  // Rate limiting check
+  const clientIp = getClientIp(request)
+  if (isRateLimited(clientIp)) {
+    return NextResponse.json(
+      { error: 'Demasiadas solicitudes. Intentá nuevamente en un minuto.' },
+      { status: 429 },
+    )
+  }
+
   let parsedBody: z.infer<typeof quotePayloadSchema>
 
   try {
@@ -144,7 +118,7 @@ export async function POST(request: Request) {
     }
 
     parsedBody = parsed.data
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'No se pudo leer el cuerpo de la solicitud.' }, { status: 400 })
   }
 
