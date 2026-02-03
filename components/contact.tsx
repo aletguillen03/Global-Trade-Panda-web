@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -25,29 +25,6 @@ type QuoteFormValues = z.infer<typeof quoteFormSchema>
 type SubmissionStatus = "idle" | "loading" | "success" | "error"
 
 export function Contact() {
-  const chatkitScriptUrl = useMemo(() => process.env.NEXT_PUBLIC_CHATKIT_WIDGET_URL, [])
-
-  useEffect(() => {
-    if (!chatkitScriptUrl || typeof window === "undefined") return
-
-    const attribute = "data-chatkit-widget"
-    const existing = document.querySelector(`script[${attribute}="quote"]`) as HTMLScriptElement | null
-
-    if (existing) return
-
-    const script = document.createElement("script")
-    script.src = chatkitScriptUrl
-    script.async = true
-    script.setAttribute(attribute, "quote")
-    document.body.appendChild(script)
-
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
-    }
-  }, [chatkitScriptUrl])
-
   const [status, setStatus] = useState<SubmissionStatus>("idle")
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
