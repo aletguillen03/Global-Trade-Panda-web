@@ -1,32 +1,32 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Ship, Box, Zap } from "lucide-react"
+import { Truck, Forklift, Bolt } from "lucide-react"
 
 const cases = [
   {
-    icon: Box,
-    title: "Importación de Electrónica",
-    company: "TechDistribuidora",
+    icon: Truck,
+    title: "Distribucion",
+    company: "TecnoLibertador",
     description:
-      "Importamos 5 contenedores de smartphones y accesorios electrónicos desde fabricantes en Shenzhen. Proceso: 12 semanas desde negociación hasta entrega en puerto de Buenos Aires.",
-    result: "2,500 unidades importadas con márgenes del 35%",
+      "Importamos 4 contenedores de Membrana PVC, Mallas Geotextiles, Tejidos Mosquiteros, Pistolas aplicadoras de siliconas, Rodillos Antigota y Guantes de Seguridad 3 fábricas involucradas, 2 ciudades.",
+    result: "+20.000 unidades importadas con márgenes de entre 35 y 65%",
   },
   {
-    icon: Ship,
-    title: "Maquinaria Industrial",
-    company: "FabriTex S.A.",
+    icon: Forklift,
+    title: "Maquinaria",
+    company: "Deco & Style S.A",
     description:
-      "Adquisición de maquinaria textil especializada de proveedores en Jiangsu. Coordinamos fabricación, certificaciones técnicas y logística de carga proyectada.",
-    result: "3 máquinas hiladores entregadas en la planta",
+      "Importamos 1 Centro de Mecanizado Vertical CNC, 1 Máquina Pulidora de Vidrio, 1 Mesa de Corte para Vidrio Laminado y 1 Ventosa para Grua..",
+    result: "Viaje a China con fabricante para visitar fábrica de maquinaria, gestión integral de la importación",
   },
   {
-    icon: Zap,
+    icon: Bolt,
     title: "Materias Primas para Manufactura",
-    company: "PlasticsInc",
+    company: "DySPlast S.A",
     description:
-      "Importación continua de resinas termoplásticas y aditivos químicos. Manejamos contenedores regulares con negociación de mejores precios por volumen.",
-    result: "Reducción de 18% en costos de materia prima",
+      "Importamos entre 2/3 contenedores anuales de Polipropileno, Polietileno, Policarbonato y Nylon en pellets. clientes de hace 10 años",
+    result: "Reducción de 21% en costos de materia prima",
   },
 ]
 
@@ -36,9 +36,9 @@ export function Cases() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Casos de exito</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Clientes Habituales</h2>
             <p className="text-lg text-gray-300 text-pretty max-w-4xl mx-auto">
-              Ejemplos reales de cómo hemos ayudado a empresas a optimizar sus importaciones desde China
+              Trabajamos con empresas, fabricantes y distribuidores de múltiples industrias. Amplia variedad de productos, maquinaria y materias primas
             </p>
           </div>
 

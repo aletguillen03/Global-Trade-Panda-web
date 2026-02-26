@@ -69,12 +69,6 @@ export function Header() {
               Nuestro proceso
             </button>
             <button
-              onClick={() => scrollToSection("clientes-habituales")}
-              className="text-sm text-white hover:text-accent transition-colors"
-            >
-              Clientes Habituales
-            </button>
-            <button
               onClick={() => scrollToSection("preguntas")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
@@ -129,12 +123,6 @@ export function Header() {
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
                 Nuestro proceso
-              </button>
-              <button
-                onClick={() => scrollToSection("clientes-habituales")}
-                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
-              >
-                Clientes Habituales
               </button>
               <button
                 onClick={() => scrollToSection("preguntas")}
