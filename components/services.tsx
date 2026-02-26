@@ -19,9 +19,18 @@ export function Services() {
                 <CardTitle className="text-2xl text-primary text-center">Gestión Integral</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-secondary text-center">
-                 Gestionamos íntegramente toda la importación, desde la selección del fabricante hasta la entrega en tu depósito.
+                <p className="text-secondary mb-4">
+                  Nos encargamos de todo el proceso desde cero.
                 </p>
+                <ul className="text-secondary space-y-1.5 list-disc list-inside">
+                  <li>Búsqueda de proveedor</li>
+                  <li>Validación de fábrica</li>
+                  <li>Negociación</li>
+                  <li>Clasificación arancelaria</li>
+                  <li>Logística internacional</li>
+                  <li>Gestión aduanera</li>
+                  <li>Entrega final</li>
+                </ul>
               </CardContent>
             </Card>
 
@@ -33,9 +42,14 @@ export function Services() {
                 <CardTitle className="text-2xl text-primary text-center">Gestión de Broker</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-secondary text-center">
-                  Nos encargamos de dar con el fabricante Localizamos el fabricante ideal en China según tus requerimientos.Servicio orientado a empresas con experiencia importando y que precisan optimizar la selección de proveedores en costo, calidad o confiabilidad.
+                <p className="text-secondary mb-4">
+                  Si es importador y cuenta con un equipo de despachantes.
                 </p>
+                <ul className="text-secondary space-y-1.5 list-disc list-inside">
+                  <li>Búsqueda de proveedor</li>
+                  <li>Validación de fábrica</li>
+                  <li>Negociación</li>
+                </ul>
               </CardContent>
             </Card>
           </div>

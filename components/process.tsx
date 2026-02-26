@@ -2,83 +2,44 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, DollarSign } from "lucide-react"
+import { CheckCircle } from "lucide-react"
 
 export function Process() {
   const processSteps = [
     {
       id: 1,
-      title: "Consulta Inicial",
+      title: "Formulario de Importación",
       description:
-        "Analizamos tus necesidades específicas y definimos los requisitos del producto que buscas importar.",
+        "Definimos producto, volumen, objetivo de costo y requisitos.",
       icon: CheckCircle,
     },
     {
       id: 2,
-      title: "Búsqueda de Fábrica / Producto",
+      title: "Búsqueda de proveedor",
       description:
-        "Identificamos y evaluamos proveedores chinos confiables que cumplan con tus especificaciones de calidad y precio.",
+        "Seleccionamos fábricas y comparamos opciones reales.",
       icon: CheckCircle,
     },
     {
       id: 3,
-      title: "Cotización",
+      title: "Muestras + negociación",
       description:
-        "Obtienes cotizaciones detalladas con precios, términos de pago y condiciones comerciales transparentes.",
+        "Validamos calidad y cerramos condiciones (precio, packaging, tiempos).",
       icon: CheckCircle,
     },
     {
       id: 4,
-      title: "Precio Aprobado",
-      description: "Una vez que apruebas el precio, procedemos con la siguiente fase del proceso de importación.",
+      title: "Logística + Aduana",
+      description:
+        "Coordinamos envío, documentación, clasificación y liberación.",
       icon: CheckCircle,
     },
     {
       id: 5,
-      title: "Pedido de Muestras / Testeo de Calidad",
+      title: "Entrega final",
       description:
-        "Solicitamos muestras del producto para realizar pruebas de calidad exhaustivas antes de la producción masiva.",
+        "Recibís la mercadería en tu depósito / empresa.",
       icon: CheckCircle,
-    },
-    {
-      id: 6,
-      title: "Calidad Aprobada",
-      description:
-        "Después de verificar que las muestras cumplen con tus estándares, damos luz verde para la producción.",
-      icon: CheckCircle,
-    },
-    {
-      id: 7,
-      title: "Confirmación Final de la Operación",
-      description:
-        "Realizamos la confirmación definitiva de todos los detalles de la operación, incluyendo especificaciones finales, cantidades y términos comerciales antes de proceder con la producción.",
-      icon: CheckCircle,
-    },
-    {
-      id: 8,
-      title: "Gestión, Coordinación y Envío de Mercadería",
-      description: "Coordinamos toda la logística de producción, empaque y envío desde China hasta tu destino final.",
-      icon: CheckCircle,
-    },
-    {
-      id: 9,
-      title: "Liberación de la Mercadería y Entrega Final",
-      description:
-        "Gestionamos los trámites aduaneros y coordinamos la entrega final en tu almacén o punto de destino.",
-      icon: CheckCircle,
-    },
-  ]
-
-  const paymentMilestones = [
-    {
-      step: 7,
-      title: "Pago del 50% de la Operación",
-      description: "Primer pago después de la confirmación final de la operación",
-    },
-    {
-      step: 8,
-      title: "Pago del 50% Restante",
-      description: "Pago final después de la gestión y coordinación del envío",
     },
   ]
 
@@ -122,25 +83,7 @@ export function Process() {
                       </CardContent>
                     </Card>
 
-                    {/* Badges de pago */}
-                    {paymentMilestones.map((milestone) => {
-                      if (milestone.step === step.id) {
-                        return (
-                          <div key={milestone.step} className="mt-4 ml-4">
-                            <div className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-lg">
-                              <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center flex-shrink-0">
-                                <DollarSign className="h-4 w-4" />
-                              </div>
-                              <div>
-                                <h4 className="font-semibold text-green-800">{milestone.title}</h4>
-                                <p className="text-sm text-green-700">{milestone.description}</p>
-                              </div>
-                            </div>
-                          </div>
-                        )
-                      }
-                      return null
-                    })}
+
                   </div>
                 </div>
               ))}
