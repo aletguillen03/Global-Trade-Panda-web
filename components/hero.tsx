@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Globe, Shield, Ship } from "lucide-react"
 
 export function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contacto")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
+  const openWhatsApp = () => {
+    const phoneNumber = "5491138757285"
+    const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
   }
 
   return (
@@ -33,7 +32,7 @@ export function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
-              onClick={scrollToContact}
+              onClick={openWhatsApp}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-4 shadow-lg"
             >

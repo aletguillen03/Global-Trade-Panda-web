@@ -1,26 +1,24 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { ContactInfo } from "@/components/contact-info"
-import { Clients } from "@/components/clients"
 import { Cases } from "@/components/cases"
+import { CtaBanner } from "@/components/cta-banner"
 import { FAQ } from "@/components/faq"
-import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { WhatsappFloat } from "@/components/whatsapp-float"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <WhatsappFloat />
       <Header />
       <Hero />
-      <About />
       <Services />
       <Process />
-      <Contact />
-      <Clients />
       <Cases />
+      <CtaBanner />
       <ContactInfo />
       <FAQ />
       <Footer />

@@ -57,22 +57,10 @@ export function Header() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection("quienes-somos")}
-              className="text-sm text-white hover:text-accent transition-colors"
-            >
-              Quiénes Somos
-            </button>
-            <button
               onClick={() => scrollToSection("proceso")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
               Nuestro proceso
-            </button>
-            <button
-              onClick={() => scrollToSection("clientes-habituales")}
-              className="text-sm text-white hover:text-accent transition-colors"
-            >
-              Clientes Habituales
             </button>
             <button
               onClick={() => scrollToSection("preguntas")}
@@ -87,7 +75,11 @@ export function Header() {
               Contacto
             </button>
             <Button
-              onClick={() => scrollToSection("contacto")}
+              onClick={() => {
+                const phoneNumber = "5491138757285"
+                const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
+              }}
               size="sm"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2 whitespace-nowrap"
               data-cta
@@ -119,22 +111,10 @@ export function Header() {
                 Inicio
               </button>
               <button
-                onClick={() => scrollToSection("quienes-somos")}
-                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
-              >
-                Quiénes Somos
-              </button>
-              <button
                 onClick={() => scrollToSection("proceso")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
                 Nuestro proceso
-              </button>
-              <button
-                onClick={() => scrollToSection("clientes-habituales")}
-                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
-              >
-                Clientes Habituales
               </button>
               <button
                 onClick={() => scrollToSection("preguntas")}
@@ -149,7 +129,12 @@ export function Header() {
                 Contacto
               </button>
               <Button
-                onClick={() => scrollToSection("contacto")}
+                onClick={() => {
+                  const phoneNumber = "5491138757285"
+                  const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+                  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
+                  setMobileMenuOpen(false)
+                }}
                 size="sm"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2 mt-2"
                 data-cta

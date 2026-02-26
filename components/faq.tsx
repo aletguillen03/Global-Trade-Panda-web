@@ -3,39 +3,29 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQ() {
   const faqs = [
     {
-      question: "¿No estoy dado de alta como importador. Puedo trabajar con ustedes?",
+      question: "¿Cuál es el volumen mínimo para importar?",
       answer:
-        "Sí. No es necesario que estés inscripto como importador. Realizamos la importación bajo nuestra empresa y luego le facturamos a tu empresa con CUIT argentino. Si más adelante querés darte de alta, también podemos asesorarte y funcionar como brokers, pero no es un requisito para empezar.",
+        "Trabajamos exclusivamente con importaciones comerciales. El volumen mínimo depende del tipo de producto, pero en general se trata de operaciones orientadas a empresas que buscan importar en cantidad para su actividad comercial o productiva.",
     },
     {
-      question: "¿Cuánto cuesta el servicio? ¿Se cobra fijo, comisión o porcentaje?",
+      question: "¿Qué tipo de productos pueden importar?",
       answer:
-        "El precio del servicio se define según la operación: puede ser una tarifa fija, comisión o porcentaje del valor de la operación, dependiendo del volumen y complejidad. Te damos una propuesta personalizada tras conocer tu proyecto.",
+        "Podemos gestionar la importación de una amplia variedad de productos, incluyendo insumos industriales, electrónicos, químicos, productos terminados, materias primas, componentes, maquinaria y mercadería para distribución o fabricación. Evaluamos cada caso para asegurar su viabilidad técnica y comercial.",
     },
     {
-      question: "¿Qué tipos de productos, maquinaria o insumos puedo importar?",
+      question: "¿Cuánto demora el proceso?",
       answer:
-        "Importamos productos multirubro, maquinaria industrial y materias primas. Nos ajustamos a tus especificaciones técnicas, volúmenes y estándares de calidad.",
+        "El plazo depende del tipo de producto, el proveedor y el método de transporte. En términos generales, el proceso completo suele demorar entre 80 y 150 días, incluyendo producción, transporte internacional, despacho aduanero y entrega final.",
     },
     {
-      question: "¿Cuál es el monto mínimo para importar con ustedes?",
+      question: "¿Se encargan de toda la gestión?",
       answer:
-        "El monto mínimo depende del tipo de producto, volumen y logística involucrada. Podemos adaptarnos a diferentes escalas, desde lotes pequeños hasta contenedores completos. Contactanos y evaluamos caso por caso.",
+        "Sí. Gestionamos el proceso completo: búsqueda y validación de proveedores, negociación, coordinación logística, documentación, despacho aduanero y entrega final en su empresa. Usted no necesita intervenir en las gestiones operativas.",
     },
     {
-      question: "¿Trabajan solo con empresas o también con personas?",
+      question: "¿Necesito experiencia previa importando?",
       answer:
-        "Nuestro servicio está principalmente orientado a empresas, distribuidores, fabricantes y proyectos mayoristas. Si sos emprendedor, también podemos analizar tu caso para ver si es viable.",
-    },
-    {
-      question: "¿Cuánto tarda una importación desde que empieza el proceso hasta la entrega?",
-      answer:
-        "El plazo varía según producto, proveedor y logística. En general, un proceso completo puede tomar entre 8 y 16 semanas, considerando fabricación, trámites aduaneros y transporte. (Nota: Este es un estimado — se puede ajustar según cada operación)",
-    },
-    {
-      question: "¿Puedo trabajar con mi propio despachante de aduana?",
-      answer:
-        "Sí. Nuestro servicio de Gestión de Broker está pensado precisamente para quienes ya tienen despachante propio y solo necesitan encontrar el proveedor adecuado en China.",
+        "No. Nuestro servicio está diseñado para empresas que desean importar de forma segura, incluso si no tienen experiencia previa. Nos encargamos de todo el proceso y lo acompañamos en cada etapa.",
     },
   ]
 

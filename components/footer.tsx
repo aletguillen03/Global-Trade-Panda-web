@@ -46,11 +46,8 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4">Empresa</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>Quiénes Somos</li>
-              <li>Nuestra Misión</li>
-              <li>Valores</li>
-              <li>Testimonios</li>
               <li>Casos de Éxito</li>
+              <li>Preguntas Frecuentes</li>
               <li>Contacto</li>
             </ul>
           </div>
@@ -58,7 +55,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/60 text-sm">
-            © 2024 Panda Global Trade. Todos los derechos reservados. | Especialistas en importaciones desde China para
+            © 2025 Panda Global Trade. Todos los derechos reservados. | Especialistas en importaciones desde China para
             empresas argentinas.
           </p>
         </div>
