@@ -4,10 +4,9 @@ import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { ContactInfo } from "@/components/contact-info"
-
 import { Cases } from "@/components/cases"
+import { CtaBanner } from "@/components/cta-banner"
 import { FAQ } from "@/components/faq"
-import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -18,9 +17,8 @@ export default function Home() {
       <About />
       <Services />
       <Process />
-      <Contact />
-
       <Cases />
+      <CtaBanner />
       <ContactInfo />
       <FAQ />
       <Footer />

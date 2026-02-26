@@ -81,7 +81,11 @@ export function Header() {
               Contacto
             </button>
             <Button
-              onClick={() => scrollToSection("contacto")}
+              onClick={() => {
+                const phoneNumber = "54937580087"
+                const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
+              }}
               size="sm"
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2 whitespace-nowrap"
               data-cta
@@ -137,7 +141,12 @@ export function Header() {
                 Contacto
               </button>
               <Button
-                onClick={() => scrollToSection("contacto")}
+                onClick={() => {
+                  const phoneNumber = "54937580087"
+                  const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+                  window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
+                  setMobileMenuOpen(false)
+                }}
                 size="sm"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm px-4 py-2 mt-2"
                 data-cta
