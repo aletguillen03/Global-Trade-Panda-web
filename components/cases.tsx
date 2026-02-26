@@ -42,11 +42,10 @@ export function Cases() {
             </p>
           </div>
 
-          <div className="overflow-x-auto pb-4">
-            <div className="flex gap-6 min-w-min">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-xs sm:max-w-none mx-auto">
               {cases.map((caseItem) => (
-                <Card key={caseItem.title} className="flex-shrink-0 w-full sm:w-96 bg-gray-900 border-gray-700">
-                  <CardContent className="p-6 flex flex-col gap-4 h-full">
+                <Card key={caseItem.title} className="bg-gray-900 border-gray-700">
+                  <CardContent className="p-5 sm:p-6 flex flex-col gap-4 h-full">
                     <div className="flex items-start justify-between">
                       <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
                         <caseItem.icon className="h-6 w-6 text-orange-400" />
@@ -63,7 +62,6 @@ export function Cases() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
           </div>
 
           <div className="mt-12 text-center">
