@@ -8,10 +8,12 @@ import { Cases } from "@/components/cases"
 import { CtaBanner } from "@/components/cta-banner"
 import { FAQ } from "@/components/faq"
 import { Footer } from "@/components/footer"
+import { WhatsappFloat } from "@/components/whatsapp-float"
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <WhatsappFloat />
       <Header />
       <Hero />
       <About />
