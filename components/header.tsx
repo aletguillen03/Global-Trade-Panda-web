@@ -57,12 +57,6 @@ export function Header() {
               Inicio
             </button>
             <button
-              onClick={() => scrollToSection("servicios")}
-              className="text-sm text-white hover:text-accent transition-colors"
-            >
-              Servicios
-            </button>
-            <button
               onClick={() => scrollToSection("proceso")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
@@ -82,7 +76,7 @@ export function Header() {
             </button>
             <Button
               onClick={() => {
-                const phoneNumber = "54937580087"
+                const phoneNumber = "5491138757285"
                 const message = "Hola, me gustaría consultar sobre sus servicios de importación."
                 window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
               }}
@@ -117,12 +111,6 @@ export function Header() {
                 Inicio
               </button>
               <button
-                onClick={() => scrollToSection("servicios")}
-                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
-              >
-                Servicios
-              </button>
-              <button
                 onClick={() => scrollToSection("proceso")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
@@ -142,7 +130,7 @@ export function Header() {
               </button>
               <Button
                 onClick={() => {
-                  const phoneNumber = "54937580087"
+                  const phoneNumber = "5491138757285"
                   const message = "Hola, me gustaría consultar sobre sus servicios de importación."
                   window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
                   setMobileMenuOpen(false)

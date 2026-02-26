@@ -5,7 +5,7 @@ import { ArrowRight, Globe, Shield, Ship } from "lucide-react"
 
 export function Hero() {
   const openWhatsApp = () => {
-    const phoneNumber = "54937580087"
+    const phoneNumber = "5491138757285"
     const message = "Hola, me gustaría consultar sobre sus servicios de importación."
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
   }

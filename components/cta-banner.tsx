@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export function CtaBanner() {
   const openWhatsApp = () => {
-    const phoneNumber = "54937580087"
+    const phoneNumber = "5491138757285"
     const message = "Hola, me gustaría solicitar una cotización para importar."
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
