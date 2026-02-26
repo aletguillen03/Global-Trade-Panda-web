@@ -105,8 +105,9 @@ export function Process() {
                   size="lg"
                   className="bg-accent hover:bg-accent/90 text-accent-foreground"
                   onClick={() => {
-                    const contactSection = document.getElementById("contacto")
-                    contactSection?.scrollIntoView({ behavior: "smooth" })
+                    const phoneNumber = "54937580087"
+                    const message = "Hola, me gustaría consultar sobre sus servicios de importación."
+                    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank")
                   }}
                 >
                   Iniciar Consulta

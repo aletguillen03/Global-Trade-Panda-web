@@ -1,9 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Analytics } from "@vercel/analytics/next"
-import { Suspense } from "react"
 import "./globals.css"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: {
@@ -60,9 +57,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
 
         {children}
-
-        <Suspense>
-        </Suspense>
       </body>
     </html>
   )

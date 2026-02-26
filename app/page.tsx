@@ -1,6 +1,5 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { ContactInfo } from "@/components/contact-info"
@@ -16,7 +15,6 @@ export default function Home() {
       <WhatsappFloat />
       <Header />
       <Hero />
-      <About />
       <Services />
       <Process />
       <Cases />
