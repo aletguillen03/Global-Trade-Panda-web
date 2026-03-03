@@ -46,23 +46,23 @@ export function TargetClients() {
             Exclusivo para empresas que importan por volumen
           </h2>
 
-          {/* Two columns grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          {/* Two columns grid - always side by side */}
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:gap-12">
             {/* Left column - Trabajamos con */}
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <CheckCircle2 className="h-6 w-6 text-green-600" />
-                <h3 className="text-xl font-semibold text-foreground">Trabajamos con:</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-green-600 shrink-0" />
+                <h3 className="text-sm sm:text-xl font-semibold text-foreground">Trabajamos con:</h3>
               </div>
-              <div className="space-y-5">
+              <div className="space-y-4 sm:space-y-5">
                 {workWith.map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-green-100">
-                      <item.icon className="h-6 w-6 text-green-700" />
+                  <div key={item.title} className="flex items-start gap-2 sm:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-green-100">
+                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-green-700" />
                     </div>
-                    <div>
-                      <h4 className="text-base font-semibold text-foreground">{item.title}</h4>
-                      <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
+                    <div className="min-w-0">
+                      <h4 className="text-sm sm:text-base font-semibold text-foreground">{item.title}</h4>
+                      <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -71,19 +71,19 @@ export function TargetClients() {
 
             {/* Right column - No trabajamos con */}
             <div>
-              <div className="flex items-center gap-2 mb-6">
-                <XCircle className="h-6 w-6 text-red-600" />
-                <h3 className="text-xl font-semibold text-foreground">No trabajamos con:</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                <XCircle className="h-5 w-5 sm:h-6 sm:w-6 text-red-600 shrink-0" />
+                <h3 className="text-sm sm:text-xl font-semibold text-foreground">No trabajamos con:</h3>
               </div>
-              <div className="space-y-5">
+              <div className="space-y-4 sm:space-y-5">
                 {dontWorkWith.map((item) => (
-                  <div key={item.title} className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red-100">
-                      <item.icon className="h-6 w-6 text-red-700" />
+                  <div key={item.title} className="flex items-start gap-2 sm:gap-4">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-red-100">
+                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-red-700" />
                     </div>
-                    <div>
-                      <h4 className="text-base font-semibold text-foreground">{item.title}</h4>
-                      <p className="mt-1 text-sm text-muted-foreground">{item.description}</p>
+                    <div className="min-w-0">
+                      <h4 className="text-sm sm:text-base font-semibold text-foreground">{item.title}</h4>
+                      <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
                 ))}
