@@ -47,22 +47,22 @@ export function TargetClients() {
           </h2>
 
           {/* Two columns grid - always side by side */}
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:gap-12">
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-start">
             {/* Left column - Trabajamos con */}
             <div>
-              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-green-600 shrink-0" />
-                <h3 className="text-sm sm:text-xl font-semibold text-foreground">Trabajamos con:</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 h-8 sm:h-auto">
+                <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-green-600 shrink-0" />
+                <h3 className="text-xs sm:text-xl font-semibold text-foreground whitespace-nowrap">Trabajamos con:</h3>
               </div>
-              <div className="space-y-4 sm:space-y-5">
-                {workWith.map((item) => (
-                  <div key={item.title} className="flex items-start gap-2 sm:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-green-100">
-                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-green-700" />
+              <div className="space-y-5 sm:space-y-5">
+                {workWith.map((item, index) => (
+                  <div key={item.title} className="flex items-start gap-2 sm:gap-4 min-h-[72px] sm:min-h-0">
+                    <div className="flex h-9 w-9 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-green-100">
+                      <item.icon className="h-4 w-4 sm:h-6 sm:w-6 text-green-700" />
                     </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm sm:text-base font-semibold text-foreground">{item.title}</h4>
-                      <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">{item.description}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-xs sm:text-base font-semibold text-foreground leading-tight">{item.title}</h4>
+                      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm text-muted-foreground leading-snug">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -71,19 +71,19 @@ export function TargetClients() {
 
             {/* Right column - No trabajamos con */}
             <div>
-              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6">
-                <XCircle className="h-5 w-5 sm:h-6 sm:w-6 text-red-600 shrink-0" />
-                <h3 className="text-sm sm:text-xl font-semibold text-foreground">No trabajamos con:</h3>
+              <div className="flex items-center gap-1.5 sm:gap-2 mb-4 sm:mb-6 h-8 sm:h-auto">
+                <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-red-600 shrink-0" />
+                <h3 className="text-xs sm:text-xl font-semibold text-foreground whitespace-nowrap">No trabajamos con:</h3>
               </div>
-              <div className="space-y-4 sm:space-y-5">
-                {dontWorkWith.map((item) => (
-                  <div key={item.title} className="flex items-start gap-2 sm:gap-4">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-red-100">
-                      <item.icon className="h-5 w-5 sm:h-6 sm:w-6 text-red-700" />
+              <div className="space-y-5 sm:space-y-5">
+                {dontWorkWith.map((item, index) => (
+                  <div key={item.title} className="flex items-start gap-2 sm:gap-4 min-h-[72px] sm:min-h-0">
+                    <div className="flex h-9 w-9 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-red-100">
+                      <item.icon className="h-4 w-4 sm:h-6 sm:w-6 text-red-700" />
                     </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm sm:text-base font-semibold text-foreground">{item.title}</h4>
-                      <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">{item.description}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-xs sm:text-base font-semibold text-foreground leading-tight">{item.title}</h4>
+                      <p className="mt-0.5 sm:mt-1 text-[10px] sm:text-sm text-muted-foreground leading-snug">{item.description}</p>
                     </div>
                   </div>
                 ))}
