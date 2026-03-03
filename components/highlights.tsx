@@ -62,7 +62,7 @@ export function Highlights() {
                 <span className="block text-3xl font-bold text-accent">
                   {stat.value}
                 </span>
-                <span className="mt-1 block text-sm font-medium text-accent">
+                <span className="mt-1 block text-sm text-muted-foreground">
                   {stat.label}
                 </span>
               </div>
