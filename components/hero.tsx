@@ -27,7 +27,7 @@ export function Hero() {
 
           {/* Subtítulo más liviano */}
           <p className="text-xl md:text-2xl mb-8 text-pretty text-orange-300 font-medium">
-            Todo el proceso de importacion, resuelto por nosotros.
+            Nos ocupamos de todo: fabricante, logistica, aduana, entrega.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
