@@ -33,21 +33,21 @@ export function Highlights() {
     <section className="py-16 md:py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* 2x2 grid on desktop, single column on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {/* 2x2 grid on all screen sizes */}
+          <div className="grid grid-cols-2 gap-3 sm:gap-5">
             {cards.map((card) => (
               <div
                 key={card.title}
-                className="flex items-start gap-4 rounded-lg border border-border bg-card p-5 transition-shadow hover:shadow-md"
+                className="flex flex-col sm:flex-row items-center sm:items-start gap-2 sm:gap-4 rounded-lg border border-border bg-card p-4 sm:p-5 text-center sm:text-left transition-shadow hover:shadow-md"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-accent/10">
-                  <card.icon className="h-5 w-5 text-accent" />
+                <div className="flex h-10 w-10 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                  <card.icon className="h-4 w-4 sm:h-5 sm:w-5 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-base font-semibold text-foreground">
+                  <h3 className="text-sm sm:text-base font-semibold text-foreground">
                     {card.title}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
                     {card.description}
                   </p>
                 </div>
@@ -55,11 +55,11 @@ export function Highlights() {
             ))}
           </div>
 
-          {/* Stats row */}
-          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
+          {/* Stats row - always side by side (1x2) */}
+          <div className="mt-10 flex flex-row items-center justify-center gap-8 sm:gap-16">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <span className="block text-3xl font-bold text-foreground">
+                <span className="block text-3xl font-bold text-accent">
                   {stat.value}
                 </span>
                 <span className="mt-1 block text-sm text-muted-foreground">

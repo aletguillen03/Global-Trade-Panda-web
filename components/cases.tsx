@@ -42,9 +42,14 @@ export function Cases() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-xs sm:max-w-none mx-auto">
+          {/* Horizontal scroll on mobile, grid on larger screens */}
+          <div className="relative -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0">
               {cases.map((caseItem) => (
-                <Card key={caseItem.title} className="bg-gray-900 border-gray-700">
+                <Card 
+                  key={caseItem.title} 
+                  className="bg-gray-900 border-gray-700 flex-shrink-0 w-[85vw] max-w-[320px] snap-center sm:w-auto sm:max-w-none sm:snap-align-none"
+                >
                   <CardContent className="p-5 sm:p-6 flex flex-col gap-4 h-full">
                     <div className="flex items-start justify-between">
                       <div className="w-12 h-12 bg-orange-500/20 rounded-full flex items-center justify-center flex-shrink-0">
@@ -62,6 +67,13 @@ export function Cases() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+            {/* Scroll indicator for mobile */}
+            <div className="flex justify-center gap-2 mt-4 sm:hidden">
+              {cases.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-gray-600" />
+              ))}
+            </div>
           </div>
 
           <div className="mt-12 text-center">
