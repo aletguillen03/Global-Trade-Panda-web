@@ -59,10 +59,10 @@ export function Highlights() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <span className="block text-3xl font-bold text-foreground">
+                <span className="block text-3xl font-bold text-accent">
                   {stat.value}
                 </span>
-                <span className="mt-1 block text-sm text-muted-foreground">
+                <span className="mt-1 block text-sm font-medium text-accent">
                   {stat.label}
                 </span>
               </div>
