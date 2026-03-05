@@ -18,46 +18,48 @@ export function ContactInfo() {
   }
 
   return (
-    <section id="info-contacto" className="w-full px-4 py-16 md:px-8 lg:px-12 bg-zinc-50 dark:bg-zinc-900">
+    <section id="info-contacto" className="w-full px-4 py-8 md:py-12 md:px-8 lg:px-12 bg-zinc-50 dark:bg-zinc-900">
       <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12">Contacto</h2>
+        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 md:mb-10">Contacto</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Horizontal layout on mobile, grid on larger screens */}
+        <div className="flex flex-row justify-center items-start gap-4 sm:gap-6 md:gap-8 flex-wrap md:flex-nowrap">
           {/* Email */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <Mail className="h-6 w-6 text-accent" />
+          <a
+            href="mailto:globaltradepanda@gmail.com"
+            className="flex flex-col items-center text-center group min-w-0 flex-1 max-w-[120px] md:max-w-none"
+          >
+            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
+              <Mail className="h-5 w-5 md:h-6 md:w-6 text-accent" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Email</h3>
-            <a
-              href="mailto:globaltradepanda@gmail.com"
-              className="text-accent hover:text-accent/80 transition-colors break-all"
-            >
+            <h3 className="text-sm md:text-base font-semibold mb-1">Email</h3>
+            <span className="text-xs md:text-sm text-accent group-hover:text-accent/80 transition-colors break-all leading-tight">
               globaltradepanda@gmail.com
-            </a>
-          </div>
+            </span>
+          </a>
 
           {/* Phone / WhatsApp */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <Phone className="h-6 w-6 text-accent" />
+          <button
+            onClick={handleWhatsapp}
+            className="flex flex-col items-center text-center group min-w-0 flex-1 max-w-[120px] md:max-w-none"
+          >
+            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
+              <Phone className="h-5 w-5 md:h-6 md:w-6 text-accent" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
-            <button onClick={handleWhatsapp} className="text-accent hover:text-accent/80 transition-colors font-medium">
+            <h3 className="text-sm md:text-base font-semibold mb-1">WhatsApp</h3>
+            <span className="text-xs md:text-sm text-accent group-hover:text-accent/80 transition-colors font-medium">
               +54 9 11 3875-7285
-            </button>
-          </div>
+            </span>
+          </button>
 
           {/* Address */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <MapPin className="h-6 w-6 text-accent" />
+          <div className="flex flex-col items-center text-center min-w-0 flex-1 max-w-[120px] md:max-w-none">
+            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full">
+              <MapPin className="h-5 w-5 md:h-6 md:w-6 text-accent" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Dirección</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Zarate 6154
-              <br />
-              San Martín
+            <h3 className="text-sm md:text-base font-semibold mb-1">Dirección</h3>
+            <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-tight">
+              Zarate 6154, San Martín
             </p>
           </div>
         </div>
