@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 import { useState } from "react"
 
 export function ContactInfo() {
@@ -18,49 +18,41 @@ export function ContactInfo() {
   }
 
   return (
-    <section id="info-contacto" className="w-full px-4 py-8 md:py-12 md:px-8 lg:px-12 bg-zinc-50 dark:bg-zinc-900">
-      <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold text-primary mb-6 md:mb-10">Contacto</h2>
+    <section id="info-contacto" className="w-full py-6 md:py-10 bg-zinc-50 dark:bg-zinc-900">
+      <div className="mx-auto w-full max-w-4xl px-4">
+        <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-4 md:mb-6">Contacto</h2>
 
-        {/* Horizontal layout on mobile, grid on larger screens */}
-        <div className="flex flex-row justify-center items-start gap-4 sm:gap-6 md:gap-8 flex-wrap md:flex-nowrap">
-          {/* Email */}
-          <a
-            href="mailto:globaltradepanda@gmail.com"
-            className="flex flex-col items-center text-center group min-w-0 flex-1 max-w-[120px] md:max-w-none"
-          >
-            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
-              <Mail className="h-5 w-5 md:h-6 md:w-6 text-accent" />
-            </div>
-            <h3 className="text-sm md:text-base font-semibold mb-1">Email</h3>
-            <span className="text-xs md:text-sm text-accent group-hover:text-accent/80 transition-colors break-all leading-tight">
-              globaltradepanda@gmail.com
-            </span>
-          </a>
+        {/* Horizontal scrollable container - single line layout */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex flex-row items-center justify-center gap-3 md:gap-6 min-w-max px-2">
+            {/* Email */}
+            <a
+              href="mailto:globaltradepanda@gmail.com"
+              className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 hover:border-accent/50 hover:shadow-md transition-all group whitespace-nowrap"
+            >
+              <div className="p-1.5 md:p-2 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
+                <Mail className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+              </div>
+              <span className="text-sm md:text-base text-foreground group-hover:text-accent transition-colors font-medium">
+                globaltradepanda@gmail.com
+              </span>
+            </a>
 
-          {/* Phone / WhatsApp */}
-          <button
-            onClick={handleWhatsapp}
-            className="flex flex-col items-center text-center group min-w-0 flex-1 max-w-[120px] md:max-w-none"
-          >
-            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
-              <Phone className="h-5 w-5 md:h-6 md:w-6 text-accent" />
-            </div>
-            <h3 className="text-sm md:text-base font-semibold mb-1">WhatsApp</h3>
-            <span className="text-xs md:text-sm text-accent group-hover:text-accent/80 transition-colors font-medium">
-              +54 9 11 3875-7285
-            </span>
-          </button>
+            {/* Divider */}
+            <div className="h-6 w-px bg-zinc-300 dark:bg-zinc-600 hidden sm:block" />
 
-          {/* Address */}
-          <div className="flex flex-col items-center text-center min-w-0 flex-1 max-w-[120px] md:max-w-none">
-            <div className="mb-2 md:mb-3 p-2 md:p-3 bg-accent/10 rounded-full">
-              <MapPin className="h-5 w-5 md:h-6 md:w-6 text-accent" />
-            </div>
-            <h3 className="text-sm md:text-base font-semibold mb-1">Dirección</h3>
-            <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-400 leading-tight">
-              Zarate 6154, San Martín
-            </p>
+            {/* Phone / WhatsApp */}
+            <button
+              onClick={handleWhatsapp}
+              className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 hover:border-accent/50 hover:shadow-md transition-all group whitespace-nowrap"
+            >
+              <div className="p-1.5 md:p-2 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
+                <Phone className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+              </div>
+              <span className="text-sm md:text-base text-foreground group-hover:text-accent transition-colors font-medium">
+                +54 9 11 3875-7285
+              </span>
+            </button>
           </div>
         </div>
       </div>
