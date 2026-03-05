@@ -25,15 +25,14 @@ export function ContactInfo() {
         {/* Horizontal scrollable container - single line layout */}
         <div className="overflow-x-auto scrollbar-hide">
           <div className="flex flex-row items-center justify-center gap-3 md:gap-6 min-w-max px-2">
-            {/* Email - simple text link with mailto */}
-            <div className="flex items-center gap-2 whitespace-nowrap">
-              <Mail className="h-4 w-4 md:h-5 md:w-5 text-accent shrink-0" />
-              <a
-                href="mailto:globaltradepanda@gmail.com"
-                className="text-sm md:text-base text-foreground hover:text-accent transition-colors underline underline-offset-2 decoration-accent/30 hover:decoration-accent"
-              >
+            {/* Email - non-interactive text styled like phone */}
+            <div className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 whitespace-nowrap">
+              <div className="p-1.5 md:p-2 bg-accent/10 rounded-full">
+                <Mail className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+              </div>
+              <span className="text-sm md:text-base text-foreground font-medium">
                 globaltradepanda@gmail.com
-              </a>
+              </span>
             </div>
 
             {/* Divider */}
