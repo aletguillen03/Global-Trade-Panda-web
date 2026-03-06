@@ -27,7 +27,7 @@ export function Hero() {
 
           {/* Subtítulo */}
           <p className="text-xl md:text-2xl lg:text-3xl mb-10 md:mb-12 text-pretty text-orange-300 font-medium">
-            Nos ocupamos de todo: fabricante, logistica, aduana, entrega.
+            Nos ocupamos de todo: fabricante, logística, aduana, entrega.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

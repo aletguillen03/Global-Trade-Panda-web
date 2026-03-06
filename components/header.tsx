@@ -60,19 +60,19 @@ export function Header() {
               onClick={() => scrollToSection("proceso")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
-              Nuestro proceso
-            </button>
-            <button
-              onClick={() => scrollToSection("preguntas")}
-              className="text-sm text-white hover:text-accent transition-colors"
-            >
-              FAQ
+              Nuestro Proceso
             </button>
             <button
               onClick={() => scrollToSection("info-contacto")}
               className="text-sm text-white hover:text-accent transition-colors"
             >
               Contacto
+            </button>
+            <button
+              onClick={() => scrollToSection("preguntas")}
+              className="text-sm text-white hover:text-accent transition-colors"
+            >
+              Faq
             </button>
             <Button
               onClick={() => {
@@ -114,19 +114,19 @@ export function Header() {
                 onClick={() => scrollToSection("proceso")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
-                Nuestro proceso
-              </button>
-              <button
-                onClick={() => scrollToSection("preguntas")}
-                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
-              >
-                FAQ
+                Nuestro Proceso
               </button>
               <button
                 onClick={() => scrollToSection("info-contacto")}
                 className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
               >
                 Contacto
+              </button>
+              <button
+                onClick={() => scrollToSection("preguntas")}
+                className="text-sm text-white hover:text-accent transition-colors text-left px-2 py-1"
+              >
+                Faq
               </button>
               <Button
                 onClick={() => {

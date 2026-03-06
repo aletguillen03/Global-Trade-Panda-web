@@ -6,7 +6,7 @@ import { Truck, Forklift, Bolt } from "lucide-react"
 const cases = [
   {
     icon: Truck,
-    title: "Distribucion",
+    title: "Distribución",
     company: "TecnoLibertador",
     description:
       "Importamos 4 contenedores de Membrana PVC, Mallas Geotextiles, Tejidos Mosquiteros, Pistolas aplicadoras de siliconas, Rodillos Antigota y Guantes de Seguridad 3 fábricas involucradas, 2 ciudades.",
@@ -78,7 +78,7 @@ export function Cases() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-400 text-sm">
-              ¿Tenés un proyecto similar? Contactanos y analizamos las posibilidades de importación para tu empresa.
+              ¿Tenés un proyecto similar? Contáctanos y analizamos las posibilidades de importación para tu empresa.
             </p>
           </div>
         </div>
