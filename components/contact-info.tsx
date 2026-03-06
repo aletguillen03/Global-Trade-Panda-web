@@ -22,9 +22,9 @@ export function ContactInfo() {
       <div className="mx-auto w-full max-w-4xl px-4">
         <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-4 md:mb-6">Contacto</h2>
 
-        {/* Horizontal scrollable container - single line layout */}
+        {/* Horizontal scrollable container - centered, scrolls when overflows */}
         <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex flex-row items-center justify-center gap-3 md:gap-6 min-w-max px-2">
+          <div className="flex flex-row items-center justify-center gap-3 md:gap-6 px-2 min-w-fit w-full">
             {/* Email - non-interactive text styled like phone */}
             <div className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 whitespace-nowrap">
               <div className="p-1.5 md:p-2 bg-accent/10 rounded-full">
