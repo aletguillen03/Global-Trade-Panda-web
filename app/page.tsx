@@ -6,6 +6,7 @@ import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { ContactInfo } from "@/components/contact-info"
 import { Cases } from "@/components/cases"
+import { WorkGallery } from "@/components/work-gallery"
 import { CtaBanner } from "@/components/cta-banner"
 import { FAQ } from "@/components/faq"
 import { Footer } from "@/components/footer"
@@ -22,6 +23,7 @@ export default function Home() {
       <Services />
       <Process />
       <Cases />
+      <WorkGallery />
       <CtaBanner />
       <ContactInfo />
       <FAQ />
