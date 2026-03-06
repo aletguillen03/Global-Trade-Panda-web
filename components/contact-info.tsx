@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 import { useState } from "react"
 
 export function ContactInfo() {
@@ -18,47 +18,38 @@ export function ContactInfo() {
   }
 
   return (
-    <section id="info-contacto" className="w-full px-4 py-16 md:px-8 lg:px-12 bg-zinc-50 dark:bg-zinc-900">
-      <div className="mx-auto w-full max-w-4xl">
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-primary mb-12">Contacto</h2>
+    <section id="info-contacto" className="w-full py-6 md:py-10 bg-zinc-50 dark:bg-zinc-900">
+      <div className="mx-auto w-full max-w-4xl px-4">
+        <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-primary mb-4 md:mb-6">Contacto</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Email */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <Mail className="h-6 w-6 text-accent" />
+        {/* Horizontal scrollable container - single line layout */}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex flex-row items-center justify-center gap-3 md:gap-6 min-w-max px-2">
+            {/* Email - non-interactive text styled like phone */}
+            <div className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 whitespace-nowrap">
+              <div className="p-1.5 md:p-2 bg-accent/10 rounded-full">
+                <Mail className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+              </div>
+              <span className="text-sm md:text-base text-foreground font-medium">
+                globaltradepanda@gmail.com
+              </span>
             </div>
-            <h3 className="text-lg font-semibold mb-2">Email</h3>
-            <a
-              href="mailto:globaltradepanda@gmail.com"
-              className="text-accent hover:text-accent/80 transition-colors break-all"
+
+            {/* Divider */}
+            <div className="h-5 w-px bg-zinc-300 dark:bg-zinc-600" />
+
+            {/* Phone / WhatsApp */}
+            <button
+              onClick={handleWhatsapp}
+              className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-5 md:py-3 bg-white dark:bg-zinc-800 rounded-full shadow-sm border border-zinc-200 dark:border-zinc-700 hover:border-accent/50 hover:shadow-md transition-all group whitespace-nowrap"
             >
-              globaltradepanda@gmail.com
-            </a>
-          </div>
-
-          {/* Phone / WhatsApp */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <Phone className="h-6 w-6 text-accent" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
-            <button onClick={handleWhatsapp} className="text-accent hover:text-accent/80 transition-colors font-medium">
-              +54 9 11 3875-7285
+              <div className="p-1.5 md:p-2 bg-accent/10 rounded-full group-hover:bg-accent/20 transition-colors">
+                <Phone className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+              </div>
+              <span className="text-sm md:text-base text-foreground group-hover:text-accent transition-colors font-medium">
+                +54 9 11 3875-7285
+              </span>
             </button>
-          </div>
-
-          {/* Address */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 p-3 bg-accent/10 rounded-full">
-              <MapPin className="h-6 w-6 text-accent" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Dirección</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Zarate 6154
-              <br />
-              San Martín
-            </p>
           </div>
         </div>
       </div>

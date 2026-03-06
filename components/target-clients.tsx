@@ -14,7 +14,7 @@ const workWith = [
   {
     icon: TrendingUp,
     title: "Empresas",
-    description: "Escalar y desarrollar nuevas lineas.",
+    description: "Escalar y desarrollar nuevas líneas.",
   },
 ]
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Globe, Shield, Ship } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function Hero() {
   const openWhatsApp = () => {
@@ -11,26 +11,26 @@ export function Hero() {
   }
 
   return (
-    <section id="inicio" className="relative py-15 lg:py-24 min-h-[60vh] flex items-center bg-black">
-      {/* Background image with overlay (se respeta tu ruta) */}
+    <section id="inicio" className="relative min-h-[70vh] md:min-h-[75vh] flex items-center bg-black">
+      {/* Background image with overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/shipping-port-hero.jpg')" }}
       />
       <div className="absolute inset-0 bg-black/70" />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 md:pt-32 lg:pt-40">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl text-white mb-6 tracking-tight text-balance">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6 md:mb-8 tracking-tight text-balance">
             Importamos de China para tu empresa
           </h1>
 
-          {/* Subtítulo más liviano */}
-          <p className="text-xl md:text-2xl mb-8 text-pretty text-orange-300 font-medium">
-            Nos ocupamos de todo: fabricante, logistica, aduana, entrega.
+          {/* Subtítulo */}
+          <p className="text-xl md:text-2xl lg:text-3xl mb-10 md:mb-12 text-pretty text-orange-300 font-medium">
+            Nos ocupamos de todo: fabricante, logística, aduana, entrega.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={openWhatsApp}
               size="lg"
@@ -48,31 +48,6 @@ export function Hero() {
             >
               Conocer Servicios
             </Button>
-          </div>
-
-          {/* Trust indicators (idénticos; solo tipografía global aplica) */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                <Shield className="h-8 w-8 text-orange-300" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Experiencia y Seguridad</h3>
-              <p className="text-gray-200">Más de 15 años viajando y trabajando con China</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                <Globe className="h-8 w-8 text-orange-300" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Red Global</h3>
-              <p className="text-gray-200">Fabricantes multirubro verificados en calidad y precio</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
-                <Ship className="h-8 w-8 text-orange-300" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Logística Integral</h3>
-              <p className="text-gray-200">De la fabrica a tu empresa sin complicaciones</p>
-            </div>
           </div>
         </div>
       </div>
